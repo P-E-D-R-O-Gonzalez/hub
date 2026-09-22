@@ -1,11 +1,137 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Weather from '../components/Weather.astro';
+import FontanaFeed from '../components/FontanaFeed.astro';
 ---
 
 <Layout>
-	<Welcome />
+  <div class="hub">
+    <header>
+      <p>Fontana Hub</p>
+      <time id="date">Date</time>
+      <time id="clock">Time</time>
+      <Weather />
+    </header>
+    <main aria-label="Hub boxes">
+      <section id="box-1" class="box" aria-label="Fontana updates">
+         <FontanaFeed/>
+      </section>
+      <section id="box-2" class="box" aria-label="Traffic cameras">
+        <iframe src="https://trafficvision.live/?state=California&search=Fontana" title="Traffic cameras" width="80%" height="90%" overflow="scroll"></iframe>
+      </section>
+      <section id="box-3" class="box" aria-label="On demand videos">
+        <iframe src="https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1" title="On demand videos" width="80%" height="90%" overflow="scroll"></iframe>
+      </section>
+      <section id="box-4" class="box" aria-label="City open data">
+         <iframe src="https://arcg.is/01ejfO0" title="City open data" width="80%" height="90%" overflow="scroll"></iframe>
+      </section>
+      <section id="box-5" class="box" aria-label="Flock map">
+        <iframe src="https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00" title="Flock map" width="80%" height="90%" overflow="scroll"></iframe>
+      </section>
+      <section id="box-6" class="box" aria-label="Fontana TV">
+        <iframe src="https://watchkfon.fontana.org/internetchannel/watch-now?site=1&channel=1" title="Fontana TV" width="80%" height="90%" overflow="scroll"></iframe>
+      </section>
+      <section id="box-7" class="box" aria-label="Fontana Herald News">
+         <a href="https://fontanaheraldnews.com" alt="Fontana Herald news" target="_blank">Fontana Herald News</a>
+      </section>
+      <section id="box-8" class="box" aria-label="Gas map">
+        <a href="https://www.gasbuddy.com/gaspricemap?lat=34.0836646662475&lng=-117.470114051795&z=13" alt="Fontana Gas Map" target="_blank">Gas Map</a>
+      </section>
+    </main>
+    <footer>Footer</footer>
+  </div>
 </Layout>
+
+<script>
+  const date = document.querySelector<HTMLTimeElement>('#date');
+  const clock = document.querySelector<HTMLTimeElement>('#clock');
+  function updateClock() {
+    const now = new Date();
+    if (date && clock) {
+      date.textContent = now.toLocaleDateString(undefined, {
+        weekday: 'long', month: 'long', day: 'numeric', year: 'numeric',
+      });
+      clock.textContent = now.toLocaleTimeString(undefined, {
+        hour: '2-digit', minute: '2-digit', second: '2-digit',
+      });
+      date.dateTime = clock.dateTime = now.toISOString();
+    }
+  }
+  updateClock();
+  window.setInterval(updateClock, 1000);
+</script>
+
+<style>
+  .hub {
+    box-sizing: border-box;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: clamp(16px, 3vw, 40px);
+    background: #f5f5f3;
+    color: #242724;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  header, footer {
+    border: 1px solid #d9dcd6;
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: clamp(14px, 1.5vw, 20px);
+  }
+  #clock { font-variant-numeric: tabular-nums; }
+  main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(360px, auto);
+    gap: clamp(10px, 2vw, 20px);
+  }
+  .box {
+    min-width: 0;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    border: 1px solid #d9dcd6;
+    border-radius: 12px;
+    background: #fff;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 500;
+    color: #777f73;
+  }
+  .box iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    border: 0;
+  }
+  .box > a {
+    padding: 20px;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+  @media (max-width: 767px) {
+    main {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  footer {
+    text-align: center;
+    color: #777f73;
+    font-size: 14px;
+  }
+</style>
+
+
+
+
+
+

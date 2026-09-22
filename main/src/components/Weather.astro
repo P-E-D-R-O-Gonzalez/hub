@@ -1,0 +1,73 @@
+<section class="conditions" aria-label="Weather for Fontana, CA 92335">
+  <dl aria-live="polite">
+    <div><dt>Temperature</dt><dd id="temperature">Loading...</dd></div>
+    <div><dt>Air quality (US AQI)</dt><dd id="air-quality">Loading...</dd></div>
+    <div><dt>Wind</dt><dd id="wind">Loading...</dd></div>
+  </dl>
+  <small>Fontana 92335 &middot; Data: <a href="https://open-meteo.com/">Open-Meteo</a> / <a href="https://atmosphere.copernicus.eu/">CAMS</a></small>
+</section>
+
+<script>
+  // Fontana, CA 92335. Both services use the same location.
+  const coordinates = { latitude: '34.0923', longitude: '-117.4343' };
+  const weatherUrl = new URL('https://api.open-meteo.com/v1/forecast');
+  weatherUrl.search = new URLSearchParams({
+    ...coordinates, current: 'temperature_2m,wind_speed_10m',
+    temperature_unit: 'fahrenheit', wind_speed_unit: 'mph',
+  }).toString();
+  const airUrl = new URL('https://air-quality-api.open-meteo.com/v1/air-quality');
+  airUrl.search = new URLSearchParams({ ...coordinates, current: 'us_aqi' }).toString();
+
+  function display(id: string, value: string) {
+    const element = document.getElementById(id);
+    if (element) element.textContent = value;
+  }
+
+  function format(value: unknown, unit: string) {
+    return typeof value === 'number' && Number.isFinite(value)
+      ? `${Math.round(value)}${unit}` : 'Unavailable';
+  }
+
+  async function getCurrent(url: URL): Promise<Record<string, unknown>> {
+    const response = await fetch(url, { signal: AbortSignal.timeout(15000) });
+    if (!response.ok) throw new Error(`Open-Meteo returned ${response.status}`);
+    const data = await response.json();
+    if (!data.current || typeof data.current !== 'object') throw new Error('Missing current data');
+    return data.current;
+  }
+
+  async function updateConditions() {
+    await Promise.allSettled([
+      (async () => {
+        try {
+          const current = await getCurrent(weatherUrl);
+          display('temperature', format(current.temperature_2m, '\u00b0F'));
+          display('wind', format(current.wind_speed_10m, ' mph'));
+        } catch {
+          display('temperature', 'Unavailable');
+          display('wind', 'Unavailable');
+        }
+      })(),
+      (async () => {
+        try {
+          const current = await getCurrent(airUrl);
+          display('air-quality', format(current.us_aqi, ''));
+        } catch {
+          display('air-quality', 'Unavailable');
+        }
+      })(),
+    ]);
+  }
+
+  void updateConditions();
+  window.setInterval(() => void updateConditions(), 15 * 60 * 1000);
+</script>
+
+<style>
+  .conditions { font-size: 14px; }
+  dl { display: flex; flex-wrap: wrap; gap: 16px 24px; margin: 0 0 8px; }
+  dt { color: #62685e; font-size: 12px; margin-bottom: 4px; }
+  dd { margin: 0; font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  small { color: #62685e; font-size: 11px; }
+  a { color: inherit; text-underline-offset: 2px; }
+</style>
