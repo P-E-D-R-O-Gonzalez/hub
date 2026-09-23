@@ -14,31 +14,41 @@ import FontanaFeed from '../components/FontanaFeed.astro';
     </header>
     <main aria-label="Hub boxes">
       <section id="box-1" class="box" aria-label="Fontana updates">
+        <a href="https://fontana.legistar.com/Calendar.aspx" alt="link to city calendar" target="_blank">Fontana calendar</a>
          <FontanaFeed/>
       </section>
       <section id="box-2" class="box" aria-label="Traffic cameras">
         <iframe src="https://trafficvision.live/?state=California&search=Fontana" title="Traffic cameras" width="80%" height="90%" overflow="scroll"></iframe>
       </section>
       <section id="box-3" class="box" aria-label="On demand videos">
+        <a href="https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1" alt="link to city on demand videos" target="_blank">On Demand Videos</a>
         <iframe src="https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1" title="On demand videos" width="80%" height="90%" overflow="scroll"></iframe>
       </section>
       <section id="box-4" class="box" aria-label="City open data">
+        <a href="https://data.fontanaca.gov/" alt="link to city data dashboard" target="_blank">Fontana Data</a>
          <iframe src="https://arcg.is/01ejfO0" title="City open data" width="80%" height="90%" overflow="scroll"></iframe>
       </section>
       <section id="box-5" class="box" aria-label="Flock map">
+        <a href="https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00" alt="link to flock map" target="_blank">Flock Map</a>
         <iframe src="https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00" title="Flock map" width="80%" height="90%" overflow="scroll"></iframe>
       </section>
       <section id="box-6" class="box" aria-label="Fontana TV">
+        <a href="https://watchkfon.fontana.org/internetchannel/watch-now?site=1&channel=1" alt="link to fontana tv" target="_blank">Fontana TV</a>
         <iframe src="https://watchkfon.fontana.org/internetchannel/watch-now?site=1&channel=1" title="Fontana TV" width="80%" height="90%" overflow="scroll"></iframe>
       </section>
-      <section id="box-7" class="box" aria-label="Fontana Herald News">
-         <a href="https://fontanaheraldnews.com" alt="Fontana Herald news" target="_blank">Fontana Herald News</a>
+      <section id="box-7" class="box" aria-label=Local Groups">
+         <a href="local.astro" alt="local groups" target="_blank">Local Groups</a>
       </section>
-      <section id="box-8" class="box" aria-label="Gas map">
-        <a href="https://www.gasbuddy.com/gaspricemap?lat=34.0836646662475&lng=-117.470114051795&z=13" alt="Fontana Gas Map" target="_blank">Gas Map</a>
+      <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+      <section id="box-8" class="box" aria-label="local Media">
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-8c88e705-f902-456f-9f41-89a508b557be" data-elfsight-app-lazy></div>
       </section>
     </main>
-    <footer>Footer</footer>
+    <footer>
+     <a href="https://www.fontana311.org/s/" target="_blank">Fontana 311 Official Report &nbsp;</a>
+     <a href="https://forms.gle/iPsVVdThTcscaAPo7" target="_blank">Digital Letter Box</a>
+    </footer>
   </div>
 </Layout>
 
