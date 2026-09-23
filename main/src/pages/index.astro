@@ -2,57 +2,101 @@
 import Layout from '../layouts/Layout.astro';
 import Weather from '../components/Weather.astro';
 import FontanaFeed from '../components/FontanaFeed.astro';
+const localMediaDocument = `<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Local Media</title>
+<style>body { margin: 0; padding: 16px; font-family: Arial, sans-serif; }</style></head>
+<body>
+<div class="elfsight-app-8c88e705-f902-456f-9f41-89a508b557be" data-elfsight-app-lazy></div>
+<script src="https://elfsightcdn.com/platform.js" async></script>
+</body></html>`;
 ---
 
 <Layout>
+  <div id="homepage-background" aria-hidden="true"></div>
   <div class="hub">
     <header>
-      <p>Fontana Hub</p>
+      <p>Fontana Aware</p>
       <time id="date">Date</time>
       <time id="clock">Time</time>
       <Weather />
     </header>
     <main aria-label="Hub boxes">
       <section id="box-1" class="box" aria-label="Fontana updates">
-        <a href="https://fontana.legistar.com/Calendar.aspx" alt="link to city calendar" target="_blank">Fontana calendar</a>
-         <FontanaFeed/>
+        <a href="https://fontana.legistar.com/Calendar.aspx" alt="link to city calendar" target="_blank">Fontana Calendar</a>
       </section>
       <section id="box-2" class="box" aria-label="Traffic cameras">
-        <iframe src="https://trafficvision.live/?state=California&search=Fontana" title="Traffic cameras" width="80%" height="90%" overflow="scroll"></iframe>
+        <a href="https://trafficvision.live/?state=California&search=Fontana" target="_blank" alt="traffic cams link">Traffic Cameras</a>
+        <button type="button" class="load-frame" aria-controls="frame-1" aria-expanded="false">Load Traffic Cams</button>
+        <iframe id="frame-1" data-src="https://trafficvision.live/?state=California&search=Fontana" title="Traffic cameras" hidden></iframe>
       </section>
       <section id="box-3" class="box" aria-label="On demand videos">
         <a href="https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1" alt="link to city on demand videos" target="_blank">On Demand Videos</a>
-        <iframe src="https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1" title="On demand videos" width="80%" height="90%" overflow="scroll"></iframe>
+        <button type="button" class="load-frame" aria-controls="frame-2" aria-expanded="false">Load Videos</button>
+        <iframe id="frame-2" data-src="https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1" title="On demand videos" hidden></iframe>
       </section>
       <section id="box-4" class="box" aria-label="City open data">
         <a href="https://data.fontanaca.gov/" alt="link to city data dashboard" target="_blank">Fontana Data</a>
-         <iframe src="https://arcg.is/01ejfO0" title="City open data" width="80%" height="90%" overflow="scroll"></iframe>
+         <button type="button" class="load-frame" aria-controls="frame-3" aria-expanded="false">Load City Data</button>
+        <iframe id="frame-3" data-src="https://arcg.is/01ejfO0" title="City open data" hidden></iframe>
       </section>
       <section id="box-5" class="box" aria-label="Flock map">
         <a href="https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00" alt="link to flock map" target="_blank">Flock Map</a>
-        <iframe src="https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00" title="Flock map" width="80%" height="90%" overflow="scroll"></iframe>
+        <button type="button" class="load-frame" aria-controls="frame-4" aria-expanded="false">Load Flock map</button>
+        <iframe id="frame-4" data-src="https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00" title="Flock map" hidden></iframe>
       </section>
       <section id="box-6" class="box" aria-label="Fontana TV">
         <a href="https://watchkfon.fontana.org/internetchannel/watch-now?site=1&channel=1" alt="link to fontana tv" target="_blank">Fontana TV</a>
-        <iframe src="https://watchkfon.fontana.org/internetchannel/watch-now?site=1&channel=1" title="Fontana TV" width="80%" height="90%" overflow="scroll"></iframe>
+        <button type="button" class="load-frame" aria-controls="frame-5" aria-expanded="false">Load Fontana TV</button>
+        <iframe id="frame-5" data-src="https://watchkfon.fontana.org/internetchannel/watch-now?site=1&channel=1" title="Fontana TV" hidden></iframe>
       </section>
-      <section id="box-7" class="box" aria-label=Local Groups">
-         <a href="local.astro" alt="local groups" target="_blank">Local Groups</a>
+      <section id="box-7" class="box" aria-label="Local Groups">
+         <a href="/localgroups/">Local Groups</a>
       </section>
-      <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
-      <section id="box-8" class="box" aria-label="local Media">
-        <script src="https://elfsightcdn.com/platform.js" async></script>
-        <div class="elfsight-app-8c88e705-f902-456f-9f41-89a508b557be" data-elfsight-app-lazy></div>
+      <section id="box-8" class="box" aria-label="Local Media">
+        <h2>Local Media</h2>
+        <button type="button" class="load-frame" aria-controls="frame-6" aria-expanded="false">Load Local Media</button>
+        <iframe id="frame-6" data-srcdoc={localMediaDocument} title="Local Media" hidden></iframe>
       </section>
     </main>
     <footer>
      <a href="https://www.fontana311.org/s/" target="_blank">Fontana 311 Official Report &nbsp;</a>
-     <a href="https://forms.gle/iPsVVdThTcscaAPo7" target="_blank">Digital Letter Box</a>
+     <a href="https://forms.gle/iPsVVdThTcscaAPo7" target="_blank">Digital Letter Box&nbsp;</a>
+          <a href="get-involved" target="_blank">Get Involved</a>
     </footer>
   </div>
 </Layout>
 
 <script>
+  const frameButtons = document.querySelectorAll<HTMLButtonElement>('.load-frame');
+  frameButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const frame = document.getElementById(button.getAttribute('aria-controls') ?? '');
+      if (!(frame instanceof HTMLIFrameElement) || (!frame.dataset.src && !frame.dataset.srcdoc)) return;
+
+      const opening = frame.hidden;
+      if (opening) {
+        frameButtons.forEach((otherButton) => {
+          if (otherButton === button) return;
+          const otherFrame = document.getElementById(otherButton.getAttribute('aria-controls') ?? '');
+          if (!(otherFrame instanceof HTMLIFrameElement) || otherFrame.hidden) return;
+          otherFrame.hidden = true;
+          otherFrame.closest('.box')?.classList.remove('is-expanded');
+          otherButton.setAttribute('aria-expanded', 'false');
+          otherButton.textContent = `Open ${otherFrame.title}`;
+        });
+      }
+      if (opening && !frame.hasAttribute('src') && !frame.hasAttribute('srcdoc')) {
+        if (frame.dataset.srcdoc) frame.srcdoc = frame.dataset.srcdoc;
+        else if (frame.dataset.src) frame.src = frame.dataset.src;
+      }
+      frame.hidden = !opening;
+      frame.closest('.box')?.classList.toggle('is-expanded', opening);
+      button.setAttribute('aria-expanded', String(opening));
+      button.textContent = `${opening ? 'Close' : 'Open'} ${frame.title}`;
+    });
+  });
+
   const date = document.querySelector<HTMLTimeElement>('#date');
   const clock = document.querySelector<HTMLTimeElement>('#clock');
   function updateClock() {
@@ -72,14 +116,29 @@ import FontanaFeed from '../components/FontanaFeed.astro';
 </script>
 
 <style>
+  #homepage-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      #00649e 0%,
+      #35a4dd 30%,
+      #c2c9d1 45%,
+      #909cad 100%
+    );
+  }
   .hub {
+    position: relative;
+    z-index: 1;
     box-sizing: border-box;
     min-height: 100svh;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: clamp(16px, 3vw, 40px);
-    background: #f5f5f3;
+    padding: 20px 12px;
+    background: transparent;
     color: #242724;
     font-family: Arial, Helvetica, sans-serif;
   }
@@ -99,34 +158,91 @@ import FontanaFeed from '../components/FontanaFeed.astro';
   }
   #clock { font-variant-numeric: tabular-nums; }
   main {
-    flex: 1;
+    align-content: start;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: minmax(360px, auto);
-    gap: clamp(10px, 2vw, 20px);
+    grid-auto-rows: auto;
+    align-items: start;
+    gap: 12px;
   }
   .box {
+    box-sizing: border-box;
+    min-height: 160px;
+    max-height: 260px;
+    overflow-y: auto;
     min-width: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     display: grid;
     place-items: center;
     border: 1px solid #d9dcd6;
     border-radius: 12px;
     background: #fff;
-    font-size: clamp(28px, 4vw, 48px);
+    font-size: clamp(20px, 2vw, 28px);
     font-weight: 500;
     color: #777f73;
   }
+
+  .box.is-expanded {
+    order: 1;
+    grid-column: 1 / -1;
+    max-height: none;
+    overflow: hidden;
+  }
   .box iframe {
     width: 100%;
-    height: 100%;
+    height: clamp(360px, 65vh, 800px);
     min-height: 360px;
     border: 0;
+  }
+  .box iframe[hidden] {
+    display: none;
+  }
+  .box > h2 {
+    margin: 0;
+    padding: 20px;
+    font: inherit;
+    text-align: center;
+  }
+  .load-frame {
+    margin: 0 20px 20px;
+    padding: 12px 20px;
+    border: 1px solid #596650;
+    border-radius: 8px;
+    background: #f5f5f3;
+    color: #242724;
+    font: 600 16px Arial, Helvetica, sans-serif;
+    cursor: pointer;
+  }
+  .load-frame:hover:not(:disabled) {
+    background: #e7ebe3;
+  }
+  .load-frame:focus-visible {
+    outline: 3px solid #596650;
+    outline-offset: 3px;
+  }
+  .load-frame:disabled {
+    cursor: default;
+    opacity: 0.65;
   }
   .box > a {
     padding: 20px;
     text-align: center;
     overflow-wrap: anywhere;
+  }
+  @media (min-width: 1100px) {
+    main {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .box {
+      font-size: 22px;
+    }
+    .box > a, .box > h2 {
+      padding: 16px 12px;
+    }
+    .load-frame {
+      margin: 0 12px 16px;
+      padding: 10px 12px;
+    }
   }
   @media (max-width: 767px) {
     main {
@@ -139,9 +255,3 @@ import FontanaFeed from '../components/FontanaFeed.astro';
     font-size: 14px;
   }
 </style>
-
-
-
-
-
-
