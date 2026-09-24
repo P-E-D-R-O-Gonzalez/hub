@@ -94,6 +94,15 @@ const localMediaDocument = `<!doctype html>
       frame.closest('.box')?.classList.toggle('is-expanded', opening);
       button.setAttribute('aria-expanded', String(opening));
       button.textContent = `${opening ? 'Close' : 'Open'} ${frame.title}`;
+      if (opening) {
+        requestAnimationFrame(() => {
+          if (frame.hidden) return;
+          frame.closest('.box')?.scrollIntoView({
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+            block: 'start',
+          });
+        });
+      }
     });
   });
 
