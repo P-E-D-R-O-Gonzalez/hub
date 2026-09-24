@@ -16,53 +16,88 @@ const localMediaDocument = `<!doctype html>
   <div id="homepage-background" aria-hidden="true"></div>
   <div class="hub">
     <header>
-      <p>Fontana Aware</p>
+      <h1>Fontana Aware</h1>
       <time id="date">Date</time>
       <time id="clock">Time</time>
       <Weather />
     </header>
     <main aria-label="Hub boxes">
-      <section id="box-1" class="box" aria-label="Fontana updates">
-        <a href="https://fontana.legistar.com/Calendar.aspx" alt="link to city calendar" target="_blank">Fontana Calendar</a>
+      <section id="box-1" class="box" aria-labelledby="card-title-1">
+        <div class="card-content">
+          <h2 id="card-title-1">Fontana Calendar</h2>
+          <p class="card-description">Meetings, agendas and attachments.</p>
+          <div class="card-actions"><a class="card-action" href="https://fontana.legistar.com/Calendar.aspx" target="_blank" rel="noopener noreferrer">View calendar</a></div>
+        </div>
+        
       </section>
-      <section id="box-2" class="box" aria-label="Traffic cameras">
-        <a href="https://trafficvision.live/?state=California&search=Fontana" target="_blank" alt="traffic cams link">Traffic Cameras</a>
-        <button type="button" class="load-frame" aria-controls="frame-1" aria-expanded="false">Load Traffic Cams</button>
+      <section id="box-2" class="box" aria-labelledby="card-title-2">
+        <div class="card-content">
+          <h2 id="card-title-2">Traffic Cameras</h2>
+          <p class="card-description">Check nearby road conditions.</p>
+          <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-1" aria-expanded="false">Load Traffic Cams</button>
+          <a class="source-link" href="https://trafficvision.live/?state=California&search=Fontana" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a></div>
+        </div>
         <iframe id="frame-1" data-src="https://trafficvision.live/?state=California&search=Fontana" title="Traffic cameras" hidden></iframe>
       </section>
-      <section id="box-3" class="box" aria-label="On demand videos">
-        <a href="https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1" alt="link to city on demand videos" target="_blank">On Demand Videos</a>
-        <button type="button" class="load-frame" aria-controls="frame-2" aria-expanded="false">Load Videos</button>
+      <section id="box-3" class="box" aria-labelledby="card-title-3">
+        <div class="card-content">
+          <h2 id="card-title-3">On Demand Videos</h2>
+          <p class="card-description">Watch recorded city programs.</p>
+          <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-2" aria-expanded="false">Load Videos</button>
+          <a class="source-link" href="https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a></div>
+        </div>
         <iframe id="frame-2" data-src="https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1" title="On demand videos" hidden></iframe>
       </section>
-      <section id="box-4" class="box" aria-label="City open data">
-        <a href="https://data.fontanaca.gov/" alt="link to city data dashboard" target="_blank">Fontana Data</a>
-         <button type="button" class="load-frame" aria-controls="frame-3" aria-expanded="false">Load City Data</button>
+      <section id="box-4" class="box" aria-labelledby="card-title-4">
+        <div class="card-content">
+          <h2 id="card-title-4">Fontana Data</h2>
+          <p class="card-description">Explore city maps and public data.</p>
+          <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-3" aria-expanded="false">Load City Data</button>
+          <a class="source-link" href="https://data.fontanaca.gov/" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a></div>
+        </div>
         <iframe id="frame-3" data-src="https://arcg.is/01ejfO0" title="City open data" hidden></iframe>
       </section>
-      <section id="box-5" class="box" aria-label="Flock map">
-        <a href="https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00" alt="link to flock map" target="_blank">Flock Map</a>
-        <button type="button" class="load-frame" aria-controls="frame-4" aria-expanded="false">Load Flock map</button>
+      <section id="box-5" class="box" aria-labelledby="card-title-5">
+        <div class="card-content">
+          <h2 id="card-title-5">Flock Map</h2>
+          <p class="card-description">Find mapped camera locations.</p>
+          <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-4" aria-expanded="false">Load Flock map</button>
+          <a class="source-link" href="https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a></div>
+        </div>
         <iframe id="frame-4" data-src="https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00" title="Flock map" hidden></iframe>
       </section>
-      <section id="box-6" class="box" aria-label="Fontana TV">
-        <a href="https://watchkfon.fontana.org/internetchannel/watch-now?site=1&channel=1" alt="link to fontana tv" target="_blank">Fontana TV</a>
-        <button type="button" class="load-frame" aria-controls="frame-5" aria-expanded="false">Load Fontana TV</button>
+      <section id="box-6" class="box" aria-labelledby="card-title-6">
+        <div class="card-content">
+          <h2 id="card-title-6">Fontana TV</h2>
+          <p class="card-description">Watch the local city broadcast.</p>
+          <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-5" aria-expanded="false">Load Fontana TV</button>
+          <a class="source-link" href="https://watchkfon.fontana.org/internetchannel/watch-now?site=1&channel=1" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a></div>
+        </div>
         <iframe id="frame-5" data-src="https://watchkfon.fontana.org/internetchannel/watch-now?site=1&channel=1" title="Fontana TV" hidden></iframe>
       </section>
-      <section id="box-7" class="box" aria-label="Local Groups">
-         <a href="/localgroups/">Local Groups</a>
+      <section id="box-7" class="box" aria-labelledby="card-title-7">
+        <div class="card-content">
+          <h2 id="card-title-7">Local Groups</h2>
+          <p class="card-description">Discover local news and groups.</p>
+          <div class="card-actions"><a class="card-action" href="/localgroups/">Browse groups</a></div>
+        </div>
+        
       </section>
-      <section id="box-8" class="box" aria-label="Local Media">
-        <h2>Local Media</h2>
-        <button type="button" class="load-frame" aria-controls="frame-6" aria-expanded="false">Load Local Media</button>
+      <section id="box-8" class="box" aria-labelledby="card-title-8">
+        <div class="card-content">
+          <h2 id="card-title-8">Local Media</h2>
+          <p class="card-description">Browse updates from local sources.</p>
+          <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-6" aria-expanded="false">Load Local Media</button></div>
+        </div>
         <iframe id="frame-6" data-srcdoc={localMediaDocument} title="Local Media" hidden></iframe>
       </section>
     </main>
     <footer>
-     <a href="https://www.fontana311.org/s/" target="_blank">Fontana 311 Official Report &nbsp;</a>
-     <a href="https://forms.gle/iPsVVdThTcscaAPo7" target="_blank">Digital Letter Box&nbsp;</a>
-          <a href="get-involved" target="_blank">Get Involved</a>
+      <nav aria-label="Community links">
+     <a href="https://www.fontana311.org/s/" target="_blank">Report a city issue</a>
+     <a href="https://forms.gle/iPsVVdThTcscaAPo7" target="_blank">Send feedback</a>
+          <a href="get-involved" target="_blank">Get involved</a>
+          </nav>
     </footer>
   </div>
 </Layout>
@@ -115,7 +150,7 @@ const localMediaDocument = `<!doctype html>
         weekday: 'long', month: 'long', day: 'numeric', year: 'numeric',
       });
       clock.textContent = now.toLocaleTimeString(undefined, {
-        hour: '2-digit', minute: '2-digit', second: '2-digit',
+        hour: '2-digit', minute: '2-digit',
       });
       date.dateTime = clock.dateTime = now.toISOString();
     }
@@ -125,6 +160,19 @@ const localMediaDocument = `<!doctype html>
 </script>
 
 <style>
+
+  a
+  {
+    color:black;
+  }
+  a:hover
+  {
+    color:blue;
+  }
+  a:visited
+  {
+    color:#777f73;
+  }
   #homepage-background {
     position: fixed;
     inset: 0;
@@ -132,10 +180,9 @@ const localMediaDocument = `<!doctype html>
     pointer-events: none;
     background: linear-gradient(
       180deg,
-      #00649e 0%,
-      #35a4dd 30%,
-      #c2c9d1 45%,
-      #909cad 100%
+      #e2eff6 0%,
+      #edf3f6 45%,
+      #f5f6f7 100%
     );
   }
   .hub {
@@ -146,7 +193,10 @@ const localMediaDocument = `<!doctype html>
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px 12px;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: clamp(16px, 3vw, 40px);
     background: transparent;
     color: #242724;
     font-family: Arial, Helvetica, sans-serif;
@@ -167,100 +217,106 @@ const localMediaDocument = `<!doctype html>
   }
   #clock { font-variant-numeric: tabular-nums; }
   main {
-    align-content: start;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: auto;
-    align-items: start;
-    gap: 12px;
+    align-items: stretch;
+    gap: 20px;
   }
   .box {
-    box-sizing: border-box;
-    min-height: 160px;
-    max-height: 260px;
-    overflow-y: auto;
     min-width: 0;
-    overflow-x: hidden;
-    display: grid;
-    place-items: center;
-    border: 1px solid #d9dcd6;
+    overflow: hidden;
+    border: 1px solid #d9e1e6;
     border-radius: 12px;
     background: #fff;
-    font-size: clamp(20px, 2vw, 28px);
-    font-weight: 500;
-    color: #777f73;
+    color: #242724;
+    scroll-margin-top: 20px;
   }
-
-  .box.is-expanded {
-    order: 1;
-    grid-column: 1 / -1;
-    max-height: none;
-    overflow: hidden;
+  .card-content {
+    box-sizing: border-box;
+    height: 100%;
+    min-height: 210px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  .box iframe {
-    width: 100%;
-    height: clamp(360px, 65vh, 800px);
-    min-height: 360px;
-    border: 0;
+  .card-content h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 600;
   }
-  .box iframe[hidden] {
-    display: none;
+  .card-description {
+    margin: 0 0 24px;
+    color: #59656e;
+    font-size: 14px;
+    line-height: 1.5;
   }
-  .box > h2 {
-    margin: 0;
-    padding: 20px;
-    font: inherit;
-    text-align: center;
+  .card-actions {
+    min-height: 80px;
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 16px;
   }
-  .load-frame {
-    margin: 0 20px 20px;
-    padding: 12px 20px;
+  .load-frame, .card-action {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 14px;
     border: 1px solid #596650;
     border-radius: 8px;
     background: #f5f5f3;
     color: #242724;
-    font: 600 16px Arial, Helvetica, sans-serif;
+    font: 600 14px/1.4 Arial, Helvetica, sans-serif;
+    text-decoration: none;
     cursor: pointer;
   }
-  .load-frame:hover:not(:disabled) {
+  .load-frame:hover, .card-action:hover {
     background: #e7ebe3;
+    color: #242724;
   }
-  .load-frame:focus-visible {
-    outline: 3px solid #596650;
-    outline-offset: 3px;
+  .source-link { font-size: 13px; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid #426b88;
+    outline-offset: 4px;
   }
-  .load-frame:disabled {
-    cursor: default;
-    opacity: 0.65;
+  .box.is-expanded { order: 1; grid-column: 1 / -1; }
+  .box.is-expanded .card-content { height: auto; min-height: 0; }
+  .box iframe {
+    display: block;
+    width: 100%;
+    height: clamp(360px, 65vh, 800px);
+    min-height: 360px;
+    border: 0;
+    border-top: 1px solid #d9e1e6;
   }
-  .box > a {
-    padding: 20px;
-    text-align: center;
-    overflow-wrap: anywhere;
-  }
-  @media (min-width: 1100px) {
-    main {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-    .box {
-      font-size: 22px;
-    }
-    .box > a, .box > h2 {
-      padding: 16px 12px;
-    }
-    .load-frame {
-      margin: 0 12px 16px;
-      padding: 10px 12px;
-    }
+  .box iframe[hidden] { display: none; }
+  @media (min-width: 1200px) {
+    main { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .card-content { padding: 20px; }
+    .card-actions { align-items: flex-start; flex-direction: column; }
+    .box.is-expanded .card-actions { flex-direction: row; align-items: center; }
   }
   @media (max-width: 767px) {
-    main {
-      grid-template-columns: minmax(0, 1fr);
-    }
+    main { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   }
-  footer {
-    text-align: center;
-    color: #777f73;
-    font-size: 14px;
+  footer { font-size: 14px; }
+  footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 32px;
+  }
+  footer a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    text-underline-offset: 4px;
+    line-height: 1.5;
   }
 </style>
+
