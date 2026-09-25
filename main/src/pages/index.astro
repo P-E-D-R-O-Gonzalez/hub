@@ -1,15 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Weather from '../components/Weather.astro';
-import FontanaFeed from '../components/FontanaFeed.astro';
-const localMediaDocument = `<!doctype html>
-<html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Local Media</title>
-<style>body { margin: 0; padding: 16px; font-family: Arial, sans-serif; }</style></head>
-<body>
-<div class="elfsight-app-8c88e705-f902-456f-9f41-89a508b557be" data-elfsight-app-lazy></div>
-<script src="https://elfsightcdn.com/platform.js" async></script>
-</body></html>`;
+import InstagramFeed from '../components/InstagramFeed.astro';
 ---
 
 <Layout>
@@ -87,9 +79,9 @@ const localMediaDocument = `<!doctype html>
         <div class="card-content">
           <h2 id="card-title-8">Local Media</h2>
           <p class="card-description">Browse updates from local sources.</p>
-          <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-6" aria-expanded="false">Load Local Media</button></div>
+          <div class="card-actions"><button type="button" class="load-frame" aria-controls="local-media-viewer" aria-expanded="false">Load Local Media</button></div>
         </div>
-        <iframe id="frame-6" data-srcdoc={localMediaDocument} title="Local Media" hidden></iframe>
+        <div id="local-media-viewer" data-title="Local Media" hidden><InstagramFeed /></div>
       </section>
     </main>
     <footer>
@@ -107,28 +99,30 @@ const localMediaDocument = `<!doctype html>
   frameButtons.forEach((button) => {
     button.addEventListener('click', () => {
       const frame = document.getElementById(button.getAttribute('aria-controls') ?? '');
-      if (!(frame instanceof HTMLIFrameElement) || (!frame.dataset.src && !frame.dataset.srcdoc)) return;
+      if (!(frame instanceof HTMLElement)) return;
+      const title = frame.dataset.title || frame.title;
 
       const opening = frame.hidden;
       if (opening) {
         frameButtons.forEach((otherButton) => {
           if (otherButton === button) return;
           const otherFrame = document.getElementById(otherButton.getAttribute('aria-controls') ?? '');
-          if (!(otherFrame instanceof HTMLIFrameElement) || otherFrame.hidden) return;
+          if (!(otherFrame instanceof HTMLElement) || otherFrame.hidden) return;
           otherFrame.hidden = true;
           otherFrame.closest('.box')?.classList.remove('is-expanded');
           otherButton.setAttribute('aria-expanded', 'false');
-          otherButton.textContent = `Open ${otherFrame.title}`;
+          otherButton.textContent = `Open ${otherFrame.dataset.title || otherFrame.title}`;
         });
       }
-      if (opening && !frame.hasAttribute('src') && !frame.hasAttribute('srcdoc')) {
+      if (opening && frame instanceof HTMLIFrameElement && !frame.hasAttribute('src') && !frame.hasAttribute('srcdoc')) {
         if (frame.dataset.srcdoc) frame.srcdoc = frame.dataset.srcdoc;
         else if (frame.dataset.src) frame.src = frame.dataset.src;
       }
       frame.hidden = !opening;
+      if (opening) frame.dispatchEvent(new CustomEvent('panel-open'));
       frame.closest('.box')?.classList.toggle('is-expanded', opening);
       button.setAttribute('aria-expanded', String(opening));
-      button.textContent = `${opening ? 'Close' : 'Open'} ${frame.title}`;
+      button.textContent = `${opening ? 'Close' : 'Open'} ${title}`;
       if (opening) {
         requestAnimationFrame(() => {
           if (frame.hidden) return;

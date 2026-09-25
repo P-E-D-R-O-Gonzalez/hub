@@ -1,0 +1,190 @@
+{
+  "backend": {
+    "name": "github",
+    "repo": "P-E-D-R-O-Gonzalez/hub",
+    "branch": "main"
+  },
+  "local_backend": true,
+  "media_folder": "main/public/uploads",
+  "public_folder": "/uploads",
+  "collections": [
+    {
+      "name": "pages",
+      "label": "Pages",
+      "files": [
+        {
+          "name": "local_groups",
+          "label": "Local Groups",
+          "file": "main/src/data/local-groups.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "news",
+              "label": "Local News Groups",
+              "widget": "object",
+              "fields": [
+                {
+                  "name": "title",
+                  "label": "Section title",
+                  "widget": "string"
+                },
+                {
+                  "name": "entries",
+                  "label": "Groups",
+                  "widget": "list",
+                  "required": false,
+                  "summary": "{{fields.name}}",
+                  "fields": [
+                    {
+                      "name": "name",
+                      "label": "Group name",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "link",
+                      "label": "Website",
+                      "widget": "string",
+                      "required": false,
+                      "pattern": [
+                        "^https?://[^\\s]+$",
+                        "Use a full http:// or https:// website URL."
+                      ]
+                    },
+                    {
+                      "name": "summary",
+                      "label": "Description",
+                      "widget": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "climate-change",
+              "label": "Climate Change Groups",
+              "widget": "object",
+              "fields": [
+                {
+                  "name": "title",
+                  "label": "Section title",
+                  "widget": "string"
+                },
+                {
+                  "name": "entries",
+                  "label": "Groups",
+                  "widget": "list",
+                  "required": false,
+                  "summary": "{{fields.name}}",
+                  "fields": [
+                    {
+                      "name": "name",
+                      "label": "Group name",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "link",
+                      "label": "Website",
+                      "widget": "string",
+                      "required": false,
+                      "pattern": [
+                        "^https?://[^\\s]+$",
+                        "Use a full http:// or https:// website URL."
+                      ]
+                    },
+                    {
+                      "name": "summary",
+                      "label": "Description",
+                      "widget": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "religious",
+              "label": "Religious Groups",
+              "widget": "object",
+              "fields": [
+                {
+                  "name": "title",
+                  "label": "Section title",
+                  "widget": "string"
+                },
+                {
+                  "name": "entries",
+                  "label": "Groups",
+                  "widget": "list",
+                  "required": false,
+                  "summary": "{{fields.name}}",
+                  "fields": [
+                    {
+                      "name": "name",
+                      "label": "Group name",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "link",
+                      "label": "Website",
+                      "widget": "string",
+                      "required": false,
+                      "pattern": [
+                        "^https?://[^\\s]+$",
+                        "Use a full http:// or https:// website URL."
+                      ]
+                    },
+                    {
+                      "name": "summary",
+                      "label": "Description",
+                      "widget": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "immigration",
+              "label": "Immigration Groups",
+              "widget": "object",
+              "fields": [
+                {
+                  "name": "title",
+                  "label": "Section title",
+                  "widget": "string"
+                },
+                {
+                  "name": "entries",
+                  "label": "Groups",
+                  "widget": "list",
+                  "required": false,
+                  "summary": "{{fields.name}}",
+                  "fields": [
+                    {
+                      "name": "name",
+                      "label": "Group name",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "link",
+                      "label": "Website",
+                      "widget": "string",
+                      "required": false,
+                      "pattern": [
+                        "^https?://[^\\s]+$",
+                        "Use a full http:// or https:// website URL."
+                      ]
+                    },
+                    {
+                      "name": "summary",
+                      "label": "Description",
+                      "widget": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

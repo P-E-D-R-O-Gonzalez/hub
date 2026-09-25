@@ -2,27 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 
 
-interface GroupEntry {
-  name: string;
-  link: string;
-  summary: string;
-}
+import content from '../data/local-groups.json';
+import { readLocalGroups } from '../lib/local-groups';
 
-interface GroupSection {
-  id: string;
-  title: string;
-  entries: GroupEntry[];
-}
+const sections = readLocalGroups(content);
 
-// Add groups to each entries list using:
-// { name: 'Group name', link: 'https://example.com', summary: 'About the group.' }
-const sections: GroupSection[] = [
-  { id: 'news', title: 'Local News Groups', 
-  entries: [{name:"Fontana Herald News",link:"https://fontanaheraldnews.com", summary:"local newspaper based in Fontana, California, serving the community with news, sports, and local events. The publication has been in operation since 1923 and is currently managed by Gerald Beam."},{name:"Newsflash",link:"https://www.fontanaca.gov/m/newsflash?cat=1",summary:"Fontana's newsletter"}, {name:"Fontana News Now",link:"https://www.facebook.com/p/Fontana-News-NOW-61561945724636/",summary:"Fontana native and long-time journalist informs Fontana residents about their city and community at large. Please also subscribe to fontananewsnow at Youtube. Have a story idea? Email fontananewsnow@gmail.com"}] },
-  { id: 'climate-change', title: 'Climate Change Groups', entries: [] },
-  { id: 'religious', title: 'Religious Groups', entries: [] },
-  { id: 'immigration', title: 'Immigration Groups', entries: [] },
-];
 ---
 
 <Layout>

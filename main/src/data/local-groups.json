@@ -1,0 +1,34 @@
+{
+  "news": {
+    "title": "Local News Groups",
+    "entries": [
+      {
+        "name": "Fontana Herald News",
+        "link": "https://fontanaheraldnews.com",
+        "summary": "local newspaper based in Fontana, California, serving the community with news, sports, and local events. The publication has been in operation since 1923 and is currently managed by Gerald Beam."
+      },
+      {
+        "name": "Newsflash",
+        "link": "https://www.fontanaca.gov/m/newsflash?cat=1",
+        "summary": "Fontana's newsletter"
+      },
+      {
+        "name": "Fontana News Now",
+        "link": "https://www.facebook.com/p/Fontana-News-NOW-61561945724636/",
+        "summary": "Fontana native and long-time journalist informs Fontana residents about their city and community at large. Please also subscribe to fontananewsnow at Youtube. Have a story idea? Email fontananewsnow@gmail.com"
+      }
+    ]
+  },
+  "climate-change": {
+    "title": "Climate Change Groups",
+    "entries": []
+  },
+  "religious": {
+    "title": "Religious Groups",
+    "entries": []
+  },
+  "immigration": {
+    "title": "Immigration Groups",
+    "entries": []
+  }
+}
