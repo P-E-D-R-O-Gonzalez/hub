@@ -14,7 +14,8 @@
   "dependencies": {
     "astro": "^7.3.3",
     "decap-cms-app": "^3.16.3",
-    "rss-parser": "^3.13.0"
+    "rss-parser": "^3.13.0",
+    "wrangler": "^4.139.0"
   },
   "allowScripts": {
     "esbuild": true

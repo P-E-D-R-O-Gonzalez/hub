@@ -4,7 +4,7 @@
 
 Local Groups uses Decap CMS at `/admin/` to edit content stored in
 `src/data/local-groups.json`. See [Decap setup](docs/decap.md) for local editing
-and Cloudflare Pages deployment with GitHub authentication.
+and Cloudflare Workers deployment with GitHub authentication.
 
 ## Local Media Instagram viewer
 

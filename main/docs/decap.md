@@ -16,61 +16,62 @@ It has not been installed or started for you.
 The CMS config paths deliberately begin with `main/` because they are relative
 to the Git repository root. Do not run the proxy from the Astro subdirectory.
 
-## Cloudflare Pages deployment
+## Cloudflare Workers deployment
 
-Connect `P-E-D-R-O-Gonzalez/hub` in Cloudflare **Workers & Pages → Create → Pages →
-Import an existing Git repository**. Use these settings:
+The production site is `https://hub.pdgonzalez2004.workers.dev` on **Workers**.
+Earlier Pages instructions do not apply. `wrangler.jsonc` serves the Astro `dist`
+assets and runs `worker/index.js` for `/api/auth` and `/api/callback`.
+No Astro SSR adapter is needed.
 
-- Production branch: `main`
-- Root directory: `main` (the Astro app is in a repository subdirectory)
-- Framework preset: Astro
-- Build command: `npm run build`
-- Build output directory: `dist` (relative to the root directory above)
-- Node version: 24, also recorded in `.node-version`
+For the existing Cloudflare Worker `hub`, connect the GitHub repository and configure
+Workers Builds with root directory `main`, production branch `main`, build command
+`npm run build`, and deploy command `npx wrangler deploy`. Ensure changes under
+`main/src/data/` trigger builds. If the existing deploy command includes `--assets`
+or was auto-generated, replace it with the command above so Wrangler uses the checked-in
+configuration and includes the OAuth Worker.
 
-Keep automatic production deployments enabled. Decap publishes content changes as
-GitHub commits, which trigger Pages builds. A separate CMS deploy webhook is not
-needed with this Git integration. The public page updates after the build deploys.
-The current Astro site is static and does not need an SSR adapter.
+These local changes have not been pushed or deployed. After deployment, publishing
+in Decap commits the content file to GitHub. Workers Builds must be connected for
+those commits to rebuild and deploy the public site automatically.
 
-## GitHub login on Cloudflare: setup pending
+## Set up the GitHub OAuth App
 
-Cloudflare hosting does not by itself configure Decap's GitHub OAuth login. The
-current CMS config still has the default authentication behavior. Before using
-production `/admin/`, deploy an OAuth service and point Decap to it.
+In GitHub **Settings → Developer settings → OAuth Apps → New OAuth App**, use:
 
-Decap lists a community-maintained
-[Cloudflare Pages Functions OAuth integration](https://github.com/i40west/netlify-cms-cloudflare-pages)
-in its [external OAuth clients documentation](https://decapcms.org/docs/external-oauth-clients/).
-This can host authentication alongside the site. Its functions would live in
-`main/functions/`, outside `public/` and `dist/`, because `main` is the Pages project
-root. The integration has not been installed or deployed yet.
+- Application name: `Fontana Aware CMS`
+- Homepage URL: `https://hub.pdgonzalez2004.workers.dev`
+- Authorization callback URL: `https://hub.pdgonzalez2004.workers.dev/api/callback`
 
-Once the final Pages URL or custom domain is known:
+In Cloudflare **Workers & Pages → hub → Settings → Variables and Secrets**, add:
 
-1. Configure the OAuth service and create a GitHub OAuth App with the site's
-   homepage and the callback URL required by that service.
-2. Store `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` in the Pages runtime
-   configuration, with the secret encrypted. Never add the secret to the repository
-   or to `public/admin/config.yml`.
-3. Set `backend.base_url` to the OAuth service origin and `backend.auth_endpoint`
-   to its login route in `public/admin/config.yml`. Set `backend.site_domain`
-   as required by the chosen service. Use the stable production domain, not a
-   temporary preview deployment URL.
-4. Deploy and verify login at `/admin/` with a GitHub user who has push access to
-   the repository. Publish a small content edit and confirm the resulting Pages
-   deployment updates `/localgroups/`.
+- `GITHUB_CLIENT_ID`: the OAuth App client ID
+- `GITHUB_CLIENT_SECRET`: the generated secret, stored as a Secret
 
-Do not treat a successful static build as proof that OAuth works. Cloudflare account
-setup, OAuth credentials, and the production login/publish test are still pending.
+Do not paste the client secret into chat, the CMS config, or source files. The
+`SITE_ORIGIN` variable is already set in `wrangler.jsonc`. The public CMS config
+points to this origin and the `api/auth` login route.
 
-References: [Cloudflare Astro deployment](https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/),
-[build configuration](https://developers.cloudflare.com/pages/configuration/build-configuration/),
+Deploy the updated Worker and visit
+`https://hub.pdgonzalez2004.workers.dev/admin/`. Sign in with a GitHub account that
+has write access to `P-E-D-R-O-Gonzalez/hub`. The OAuth App requests GitHub's `repo`
+scope for Decap's GitHub backend; the callback checks write access to this repository
+before returning the token to the CMS. GitHub's authorization screen explains the
+scope before access is granted.
+
+The login flow uses a short-lived secure cookie, state validation, PKCE, and an
+origin-checked popup handshake. Credentials are used only by the Worker. Authentication
+responses are not cached. The implementation has local automated tests, but live
+login and publishing still need verification after credentials and deployment are ready.
+Local Astro development does not serve the Worker OAuth routes; use the local Decap
+proxy described above to edit locally.
+
+References: [Worker static assets](https://developers.cloudflare.com/workers/static-assets/binding/),
+[GitHub OAuth](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps),
 and [Decap GitHub backend](https://decapcms.org/docs/github-backend/).
 
 ## Verification
 
-Run `npm run build`. To verify editing end to end, start the local proxy, edit a
+Run `node --test tests/cms-auth.test.js` and `npm run build`. To verify editing end to end, start the local proxy, edit a
 group, save, and check `/localgroups/`. The page validates required fields and
 website protocols at build time, and renders descriptions as escaped plain text.
 
