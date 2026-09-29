@@ -10,7 +10,8 @@ export interface GroupSection {
   entries: GroupEntry[];
 }
 
-const categories = ['news', 'climate-change', 'religious', 'immigration'];
+// add your categories here
+const categories = [''];
 
 export function readLocalGroups(content: unknown): GroupSection[] {
   if (!content || typeof content !== 'object') throw new Error('Invalid Local Groups content.');
