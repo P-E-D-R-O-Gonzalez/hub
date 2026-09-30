@@ -10,6 +10,16 @@
   try { if (localStorage.getItem('site-language') === 'es') language = 'es'; } catch {}
   const buttons = document.querySelectorAll<HTMLButtonElement>('[data-language]');
   const attributes = ['aria-label', 'title', 'data-title'];
+  const originals = new WeakMap<Node, Map<string, { original: string; rendered: string }>>();
+  function localize(node: Node, key: string, current: string) {
+    let values = originals.get(node);
+    if (!values) { values = new Map(); originals.set(node, values); }
+    const previous = values.get(key);
+    const original = previous?.rendered === current ? previous.original : current;
+    const rendered = language === 'es' ? translate(original, language) : original;
+    values.set(key, { original, rendered });
+    return rendered;
+  }
   // Observe site copy so weather responses and panel controls also use the selected language.
   // Text nodes preserve child elements, event handlers, selected options, and loaded embeds.
   function translatePage() {
@@ -18,14 +28,14 @@
     while (walker.nextNode()) {
       const node = walker.currentNode;
       if (node.parentElement?.closest('script, style, noscript, .language-bar, [translate="no"]')) continue;
-      const value = translate(node.textContent ?? '', language);
+      const value = localize(node, 'text', node.textContent ?? '');
       if (value !== node.textContent) node.textContent = value;
     }
     document.querySelectorAll<HTMLElement>('[aria-label], [title], [data-title]').forEach(element => {
       if (element.closest('.language-bar, [translate="no"]')) return;
       attributes.forEach(attribute => {
         const value = element.getAttribute(attribute);
-        if (value !== null) element.setAttribute(attribute, translate(value, language));
+        if (value !== null) element.setAttribute(attribute, localize(element, attribute, value));
       });
     });
     observer.observe(document.body, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: attributes });

@@ -10,6 +10,24 @@ Open `/admin/`, then **Pages → Local Groups**, to edit section titles and add,
 reorder, or remove groups in the four categories. Each group has a name, optional
 website, and plain-text description. Content lives in `src/data/local-groups.json`.
 
+## Editing Spanish translations
+
+Open `/admin/` and choose **Pages → Spanish translations**. Expand an existing
+entry to edit its Spanish text, or add an entry for new page or CMS content.
+The English source must match the visible text exactly, including punctuation
+and capitalization. Editing the source here does not change the English page.
+For Markdown content, translate each text segment separately (links and bold
+text split a paragraph into separate segments). These are plain-text translations.
+
+Keep `{title}`, `{count}`, and `{account}` placeholders in dynamic translations;
+you may move them within the sentence. Duplicate English sources, empty values,
+and missing placeholders fail the build with an error. Multiple English phrases
+may share a Spanish translation; the toggle remembers the original page text.
+Removing an entry leaves that text in English.
+
+Publish to save `main/src/data/translations.json` to GitHub. The site must rebuild
+and deploy before visitors see the changes. Third-party embeds are not translated.
+
 ## Local editing
 
 Start Astro from the `main` project directory with `npm run dev -- --background`.

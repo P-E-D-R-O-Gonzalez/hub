@@ -1,5 +1,7 @@
 ---
 import LanguageToggle from '../components/LanguageToggle.astro';
+// Validate CMS translations during the build as well as loading them in the browser.
+import '../lib/translations';
 ---
 <!doctype html>
 <html lang="en">
@@ -25,5 +27,4 @@ import LanguageToggle from '../components/LanguageToggle.astro';
 		height: 100%;
 	}
 </style>
-
 

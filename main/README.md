@@ -13,8 +13,9 @@ and Cloudflare Workers deployment with GitHub authentication.
 
 Every public page includes an English / Español switch. The selection is saved
 in the visitor's browser and applies to navigation, controls, weather labels, and
-dates. Maintain site-copy translations in `src/lib/translations.ts` when changing
-page or CMS text. Untranslated custom content and third-party embeds retain their
+dates. Edit **Pages → Spanish translations** in `/admin/` when changing page or
+CMS text. Translations are stored in `src/data/translations.json` and published
+changes take effect after a rebuild. Untranslated custom content and third-party embeds retain their
 original language. The switch requires JavaScript; English is the default.
 
 ## Local Media Instagram viewer

@@ -29,7 +29,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
           <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-1" aria-expanded="false">Load Traffic Cams</button>
           <a class="source-link" href="https://trafficvision.live/?state=California&search=Fontana" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a></div>
         </div>
-        <iframe id="frame-1" data-src="https://trafficvision.live/?state=California&search=Fontana" title="Traffic cameras" hidden></iframe>
+        <iframe id="frame-1" data-src="https://trafficvision.live/?state=California&search=Fontana" data-source-title="Traffic cameras" title="Traffic cameras" hidden></iframe>
       </section>
       <section id="box-3" class="box" aria-labelledby="card-title-3">
         <div class="card-content">
@@ -38,7 +38,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
           <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-2" aria-expanded="false">Load Videos</button>
           <a class="source-link" href="https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a></div>
         </div>
-        <iframe id="frame-2" data-src="https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1" title="On demand videos" hidden></iframe>
+        <iframe id="frame-2" data-src="https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1" data-source-title="On demand videos" title="On demand videos" hidden></iframe>
       </section>
       <section id="box-4" class="box" aria-labelledby="card-title-4">
         <div class="card-content">
@@ -47,7 +47,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
           <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-3" aria-expanded="false">Load City Data</button>
           <a class="source-link" href="https://data.fontanaca.gov/" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a></div>
         </div>
-        <iframe id="frame-3" data-src="https://arcg.is/01ejfO0" title="City open data" hidden></iframe>
+        <iframe id="frame-3" data-src="https://arcg.is/01ejfO0" data-source-title="City open data" title="City open data" hidden></iframe>
       </section>
       <section id="box-5" class="box" aria-labelledby="card-title-5">
         <div class="card-content">
@@ -56,7 +56,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
           <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-4" aria-expanded="false">Load Flock map</button>
           <a class="source-link" href="https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a></div>
         </div>
-        <iframe id="frame-4" data-src="https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00" title="Flock map" hidden></iframe>
+        <iframe id="frame-4" data-src="https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00" data-source-title="Flock map" title="Flock map" hidden></iframe>
       </section>
       <section id="box-6" class="box" aria-labelledby="card-title-6">
         <div class="card-content">
@@ -65,7 +65,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
           <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-5" aria-expanded="false">Load Fontana TV</button>
           <a class="source-link" href="https://watchkfon.fontana.org/internetchannel/watch-now?site=1&channel=1" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a></div>
         </div>
-        <iframe id="frame-5" data-src="https://watchkfon.fontana.org/internetchannel/watch-now?site=1&channel=1" title="Fontana TV" hidden></iframe>
+        <iframe id="frame-5" data-src="https://watchkfon.fontana.org/internetchannel/watch-now?site=1&channel=1" data-source-title="Fontana TV" title="Fontana TV" hidden></iframe>
       </section>
       <section id="box-7" class="box" aria-labelledby="card-title-7">
         <div class="card-content">
@@ -81,7 +81,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
           <p class="card-description">Browse updates from local sources.</p>
           <div class="card-actions"><button type="button" class="load-frame" aria-controls="local-media-viewer" aria-expanded="false">Load Local Media</button></div>
         </div>
-        <div id="local-media-viewer" data-title="Local Media" hidden><InstagramFeed /></div>
+        <div id="local-media-viewer" data-data-source-title="Local Media" title="Local Media" hidden><InstagramFeed /></div>
       </section>
     </main>
     <footer>
@@ -96,11 +96,16 @@ import InstagramFeed from '../components/InstagramFeed.astro';
 
 <script>
   const frameButtons = document.querySelectorAll<HTMLButtonElement>('.load-frame');
+  // Keep source titles in English so newly generated button labels can be translated.
+  const frameTitles = new Map<string, string>();
+  document.querySelectorAll<HTMLElement>('[data-source-title]').forEach(frame => {
+    frameTitles.set(frame.id, frame.dataset.sourceTitle!);
+  });
   frameButtons.forEach((button) => {
     button.addEventListener('click', () => {
       const frame = document.getElementById(button.getAttribute('aria-controls') ?? '');
       if (!(frame instanceof HTMLElement)) return;
-      const title = frame.dataset.title || frame.title;
+      const title = frameTitles.get(frame.id) || frame.dataset.title || frame.title;
 
       const opening = frame.hidden;
       if (opening) {
@@ -111,7 +116,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
           otherFrame.hidden = true;
           otherFrame.closest('.box')?.classList.remove('is-expanded');
           otherButton.setAttribute('aria-expanded', 'false');
-          otherButton.textContent = `Open ${otherFrame.dataset.title || otherFrame.title}`;
+          otherButton.textContent = `Open ${frameTitles.get(otherFrame.id) || otherFrame.dataset.title || otherFrame.title}`;
         });
       }
       if (opening && frame instanceof HTMLIFrameElement && !frame.hasAttribute('src') && !frame.hasAttribute('srcdoc')) {
