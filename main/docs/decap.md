@@ -1,4 +1,10 @@
-# Local Groups with Decap CMS
+# Pages with Decap CMS
+
+Open `/admin/`, then **Pages → Get Involved**, to add the content displayed below
+the fixed **Get Involved** heading at `/getting-involved/`. The Markdown editor
+supports headings, paragraphs, lists, links, and images. The body starts empty;
+no placeholder content is displayed. Content lives in `src/data/getting-involved.md`
+and publishing requires a site rebuild, just like Local Groups.
 
 Open `/admin/`, then **Pages → Local Groups**, to edit section titles and add,
 reorder, or remove groups in the four categories. Each group has a name, optional
