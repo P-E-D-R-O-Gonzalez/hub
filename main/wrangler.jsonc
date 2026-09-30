@@ -3,6 +3,7 @@
   "name": "hub",
   "main": "worker/index.js",
   "compatibility_date": "2026-09-24",
+  "observability": { "enabled": true },
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
@@ -10,7 +11,6 @@
   },
   "vars": {
     "SITE_ORIGIN": "https://hub.pdgonzalez2004.workers.dev",
-    "GITHUB_CLIENT_ID": "Ov23livhkZh1mSWf08qg",
-    "GITHUB_CLIENT_SECRET": "312b038bb7a49f0ad897b62382abc775b06623b8"
+    "GITHUB_CLIENT_ID": "Ov23livhkZh1mSWf08qg"
     },
   }
