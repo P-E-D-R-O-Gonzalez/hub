@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Content, rawContent } from '../data/getting-involved.md';
+
+const hasContent = rawContent().trim().length > 0;
+---
+
+<Layout>
+  <main class="getting-involved">
+    <header>
+      <a href="/">Back to home</a>
+      <h1>Get Involved</h1>
+    </header>
+    {hasContent && <div class="content"><Content /></div>}
+  </main>
+</Layout>
+
+<style>
+  .getting-involved {
+    box-sizing: border-box;
+    min-height: 100svh;
+    padding: clamp(16px, 3vw, 40px);
+    background: #f5f5f3;
+    color: #242724;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+  }
+  header, .content {
+    box-sizing: border-box;
+    max-width: 960px;
+    margin: 0 auto 20px;
+    padding: clamp(20px, 4vw, 36px);
+    border: 1px solid #d9dcd6;
+    border-radius: 12px;
+    background: #fff;
+    overflow-wrap: anywhere;
+  }
+  h1 { margin: 16px 0 8px; font-size: clamp(28px, 5vw, 48px); line-height: 1.2; }
+  .getting-involved :global(a) { color: #46553d; }
+  .getting-involved :global(a:focus-visible) { outline: 3px solid #596650; outline-offset: 3px; }
+  .content :global(h2), .content :global(h3) { line-height: 1.3; }
+  .content :global(> :first-child) { margin-top: 0; }
+  .content :global(> :last-child) { margin-bottom: 0; }
+  .content :global(img) { max-width: 100%; height: auto; }
+  .content :global(pre) { overflow-x: auto; }
+</style>

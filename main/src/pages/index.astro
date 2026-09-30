@@ -88,7 +88,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
       <nav aria-label="Community links">
      <a href="your-link" target="_blank">Report a city issue</a>
      <a href="your-link" target="_blank">Send feedback</a>
-          <a href="get-involved" target="_blank">Get involved</a>
+          <a href="/getting-involved/">Get involved</a>
           </nav>
     </footer>
   </div>
@@ -140,16 +140,18 @@ import InstagramFeed from '../components/InstagramFeed.astro';
   function updateClock() {
     const now = new Date();
     if (date && clock) {
-      date.textContent = now.toLocaleDateString(undefined, {
+      const locale = document.documentElement.lang === 'es' ? 'es-US' : 'en-US';
+      date.textContent = now.toLocaleDateString(locale, {
         weekday: 'long', month: 'long', day: 'numeric', year: 'numeric',
       });
-      clock.textContent = now.toLocaleTimeString(undefined, {
+      clock.textContent = now.toLocaleTimeString(locale, {
         hour: '2-digit', minute: '2-digit',
       });
       date.dateTime = clock.dateTime = now.toISOString();
     }
   }
   updateClock();
+  window.addEventListener('languagechange', updateClock);
   window.setInterval(updateClock, 1000);
 </script>
 

@@ -15,6 +15,25 @@
       "label": "Pages",
       "files": [
         {
+          "name": "getting_involved",
+          "label": "Get Involved",
+          "file": "main/src/data/getting-involved.md",
+          "fields": [
+            {
+              "name": "title",
+              "widget": "hidden",
+              "default": "Get Involved"
+            },
+            {
+              "name": "body",
+              "label": "Page content",
+              "widget": "markdown",
+              "required": false,
+              "hint": "Add content below the Get Involved heading. Leave empty to show only the page header."
+            }
+          ]
+        },
+        {
           "name": "local_groups",
           "label": "Local Groups",
           "file": "main/src/data/local-groups.json",

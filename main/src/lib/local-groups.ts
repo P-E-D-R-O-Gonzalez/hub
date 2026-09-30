@@ -11,7 +11,7 @@ export interface GroupSection {
 }
 
 // add your categories here
-const categories = [''];
+const categories = ['news', 'climate-change', 'religious', 'immigration'];
 
 export function readLocalGroups(content: unknown): GroupSection[] {
   if (!content || typeof content !== 'object') throw new Error('Invalid Local Groups content.');
@@ -20,7 +20,9 @@ export function readLocalGroups(content: unknown): GroupSection[] {
     if (!section || typeof section.title !== 'string' || !section.title.trim()) throw new Error(`Missing title for ${id}.`);
     const entries = section.entries ?? [];
     if (!Array.isArray(entries)) throw new Error(`Invalid groups for ${id}.`);
-    return { id, title: section.title, entries: entries.map(entry => {
+    // Empty CMS template rows are placeholders, not published groups.
+    const publishedEntries = entries.filter(entry => !(entry && entry.name === '' && entry.summary === '' && !entry.link));
+    return { id, title: section.title, entries: publishedEntries.map(entry => {
       if (!entry || typeof entry.name !== 'string' || !entry.name.trim() || typeof entry.summary !== 'string') {
         throw new Error(`Each group in ${id} needs a name and description.`);
       }

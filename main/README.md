@@ -14,6 +14,14 @@ wrangler.jsonc: add your site domain and github id
 
 /src/data/local-groups.json: add your data manually or through CMS(see below)
 
+## Languages
+
+Every public page includes an English / Español switch. The selection is saved
+in the visitor's browser and applies to navigation, controls, weather labels, and
+dates. Maintain site-copy translations in `src/lib/translations.ts` when changing
+page or CMS text. Untranslated custom content and third-party embeds retain their
+original language. The switch requires JavaScript; English is the default.
+
 ## Local Groups CMS
 
 Local Groups uses Decap CMS at `/admin/` to edit content stored in
