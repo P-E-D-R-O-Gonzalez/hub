@@ -204,6 +204,44 @@
               ]
             }
           ]
+        },
+        {
+          "name": "translations",
+          "label": "Spanish translations",
+          "file": "main/src/data/translations.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "entries",
+              "label": "Translations",
+              "label_singular": "Translation",
+              "widget": "list",
+              "collapsed": true,
+              "summary": "{{fields.en}}",
+              "hint": "Match the English text on the page exactly. Keep placeholders such as {title}, {count}, and {account} in the Spanish version.",
+              "fields": [
+                {
+                  "name": "en",
+                  "label": "English source text",
+                  "widget": "text",
+                  "hint": "This identifies the text to translate; it does not change the English page.",
+                  "pattern": [
+                    ".*\\S.*",
+                    "Enter non-empty text."
+                  ]
+                },
+                {
+                  "name": "es",
+                  "label": "Spanish translation",
+                  "widget": "text",
+                  "pattern": [
+                    ".*\\S.*",
+                    "Enter non-empty text."
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }
