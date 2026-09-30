@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Brand from '../components/Brand.astro';
 import Weather from '../components/Weather.astro';
 import InstagramFeed from '../components/InstagramFeed.astro';
 ---
@@ -8,7 +9,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
   <div id="homepage-background" aria-hidden="true"></div>
   <div class="hub">
     <header>
-      <h1>Fontana Aware</h1>
+      <h1 class="site-brand"><Brand /></h1>
       <time id="date">Date</time>
       <time id="clock">Time</time>
       <Weather />
@@ -161,6 +162,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
 </script>
 
 <style>
+  .site-brand { margin: 0; line-height: 1; max-width: 100%; }
 
   a
   {
