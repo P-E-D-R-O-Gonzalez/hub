@@ -8,14 +8,14 @@ import InstagramFeed from '../components/InstagramFeed.astro';
 <Layout>
   <div id="homepage-background" aria-hidden="true"></div>
   <div class="hub">
-    <header>
+    <header class="water-panel">
       <h1 class="site-brand"><Brand /></h1>
       <time id="date">Date</time>
       <time id="clock">Time</time>
       <Weather />
     </header>
     <main aria-label="Hub boxes">
-      <section id="box-1" class="box" aria-labelledby="card-title-1">
+      <section id="box-1" class="box water-panel" aria-labelledby="card-title-1">
         <div class="card-content">
           <h2 id="card-title-1">Fontana Calendar</h2>
           <p class="card-description">Meetings, agendas and attachments.</p>
@@ -23,7 +23,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
         </div>
         
       </section>
-      <section id="box-2" class="box" aria-labelledby="card-title-2">
+      <section id="box-2" class="box water-panel" aria-labelledby="card-title-2">
         <div class="card-content">
           <h2 id="card-title-2">Traffic Cameras</h2>
           <p class="card-description">Check nearby road conditions.</p>
@@ -32,7 +32,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
         </div>
         <iframe id="frame-1" data-src="https://trafficvision.live/?state=California&search=Fontana" data-source-title="Traffic cameras" title="Traffic cameras" hidden></iframe>
       </section>
-      <section id="box-3" class="box" aria-labelledby="card-title-3">
+      <section id="box-3" class="box water-panel" aria-labelledby="card-title-3">
         <div class="card-content">
           <h2 id="card-title-3">On Demand Videos</h2>
           <p class="card-description">Watch recorded city programs.</p>
@@ -41,7 +41,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
         </div>
         <iframe id="frame-2" data-src="https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1" data-source-title="On demand videos" title="On demand videos" hidden></iframe>
       </section>
-      <section id="box-4" class="box" aria-labelledby="card-title-4">
+      <section id="box-4" class="box water-panel" aria-labelledby="card-title-4">
         <div class="card-content">
           <h2 id="card-title-4">Fontana Data</h2>
           <p class="card-description">Explore city maps and public data.</p>
@@ -50,7 +50,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
         </div>
         <iframe id="frame-3" data-src="https://arcg.is/01ejfO0" data-source-title="City open data" title="City open data" hidden></iframe>
       </section>
-      <section id="box-5" class="box" aria-labelledby="card-title-5">
+      <section id="box-5" class="box water-panel" aria-labelledby="card-title-5">
         <div class="card-content">
           <h2 id="card-title-5">Flock Map</h2>
           <p class="card-description">Find mapped camera locations.</p>
@@ -59,7 +59,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
         </div>
         <iframe id="frame-4" data-src="https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00" data-source-title="Flock map" title="Flock map" hidden></iframe>
       </section>
-      <section id="box-6" class="box" aria-labelledby="card-title-6">
+      <section id="box-6" class="box water-panel" aria-labelledby="card-title-6">
         <div class="card-content">
           <h2 id="card-title-6">Fontana TV</h2>
           <p class="card-description">Watch the local city broadcast.</p>
@@ -68,7 +68,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
         </div>
         <iframe id="frame-5" data-src="https://watchkfon.fontana.org/internetchannel/watch-now?site=1&channel=1" data-source-title="Fontana TV" title="Fontana TV" hidden></iframe>
       </section>
-      <section id="box-7" class="box" aria-labelledby="card-title-7">
+      <section id="box-7" class="box water-panel" aria-labelledby="card-title-7">
         <div class="card-content">
           <h2 id="card-title-7">Local Groups</h2>
           <p class="card-description">Discover local news and groups.</p>
@@ -76,7 +76,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
         </div>
         
       </section>
-      <section id="box-8" class="box" aria-labelledby="card-title-8">
+      <section id="box-8" class="box water-panel" aria-labelledby="card-title-8">
         <div class="card-content">
           <h2 id="card-title-8">Local Media</h2>
           <p class="card-description">Browse updates from local sources.</p>
@@ -85,7 +85,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
         <div id="local-media-viewer" data-data-source-title="Local Media" title="Local Media" hidden><InstagramFeed /></div>
       </section>
     </main>
-    <footer>
+    <footer class="water-panel">
       <nav aria-label="Community links">
      <a href="https://www.fontana311.org/s/" target="_blank">Report a city issue</a>
      <a href="https://forms.gle/iPsVVdThTcscaAPo7" target="_blank">Send feedback</a>
@@ -166,15 +166,15 @@ import InstagramFeed from '../components/InstagramFeed.astro';
 
   a
   {
-    color:black;
+    color: var(--water-blue);
   }
   a:hover
   {
-    color:blue;
+    color: #064a76;
   }
   a:visited
   {
-    color:#777f73;
+    color:var(--water-blue);
   }
   #homepage-background {
     position: fixed;
@@ -183,9 +183,9 @@ import InstagramFeed from '../components/InstagramFeed.astro';
     pointer-events: none;
     background: linear-gradient(
       180deg,
-      #e2eff6 0%,
-      #edf3f6 45%,
-      #f5f6f7 100%
+      #f4fbff 0%,
+      #eaf7ff 45%,
+      #f8fcff 100%
     );
   }
   .hub {
@@ -201,11 +201,11 @@ import InstagramFeed from '../components/InstagramFeed.astro';
     margin: 0 auto;
     padding: clamp(16px, 3vw, 40px);
     background: transparent;
-    color: #242724;
+    color: var(--water-ink);
     font-family: Arial, Helvetica, sans-serif;
   }
   header, footer {
-    border: 1px solid #d9dcd6;
+    border: 1px solid var(--water-border);
     background: #fff;
     border-radius: 12px;
     padding: 24px;
@@ -228,10 +228,10 @@ import InstagramFeed from '../components/InstagramFeed.astro';
   .box {
     min-width: 0;
     overflow: hidden;
-    border: 1px solid #d9e1e6;
+    border: 1px solid var(--water-border);
     border-radius: 12px;
     background: #fff;
-    color: #242724;
+    color: var(--water-ink);
     scroll-margin-top: 20px;
   }
   .card-content {
@@ -251,7 +251,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
   }
   .card-description {
     margin: 0 0 24px;
-    color: #59656e;
+    color: var(--water-muted);
     font-size: 14px;
     line-height: 1.5;
   }
@@ -270,21 +270,21 @@ import InstagramFeed from '../components/InstagramFeed.astro';
     justify-content: center;
     min-height: 44px;
     padding: 10px 14px;
-    border: 1px solid #596650;
+    border: 1px solid var(--water-blue);
     border-radius: 8px;
-    background: #f5f5f3;
-    color: #242724;
+    background: var(--water-page);
+    color: var(--water-ink);
     font: 600 14px/1.4 Arial, Helvetica, sans-serif;
     text-decoration: none;
     cursor: pointer;
   }
   .load-frame:hover, .card-action:hover {
-    background: #e7ebe3;
-    color: #242724;
+    background: var(--water-hover);
+    color: var(--water-ink);
   }
   .source-link { font-size: 13px; text-underline-offset: 3px; }
   a:focus-visible, button:focus-visible {
-    outline: 3px solid #426b88;
+    outline: 3px solid var(--water-blue);
     outline-offset: 4px;
   }
   .box.is-expanded { order: 1; grid-column: 1 / -1; }
@@ -295,7 +295,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
     height: clamp(360px, 65vh, 800px);
     min-height: 360px;
     border: 0;
-    border-top: 1px solid #d9e1e6;
+    border-top: 1px solid var(--water-border);
   }
   .box iframe[hidden] { display: none; }
   @media (min-width: 1200px) {

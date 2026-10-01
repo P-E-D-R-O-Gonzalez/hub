@@ -11,7 +11,7 @@ import { defaultSources } from '../lib/instagram';
     <select id="instagram-filter"><option value="">All sources</option></select>
     <button type="button" class="refresh">Refresh feeds</button>
   </div>
-  <p class="empty">No Instagram sources are configured yet.</p>
+  <p class="empty water-panel">No Instagram sources are configured yet.</p>
   <div class="feed-grid"></div>
   <p class="embed-note">If a feed is unavailable or asks you to sign in, use “View on Instagram”.</p>
   <noscript>Enable JavaScript to view Instagram feeds.</noscript>
@@ -36,7 +36,7 @@ import { defaultSources } from '../lib/instagram';
     grid.replaceChildren();
     for (const source of sources) {
       const card = document.createElement('article');
-      card.className = 'feed-card';
+      card.className = 'feed-card water-panel';
       card.dataset.source = source;
       card.hidden = !!selected && selected !== source;
       const head = document.createElement('div');
@@ -80,26 +80,26 @@ import { defaultSources } from '../lib/instagram';
 </script>
 
 <style>
-  .instagram-viewer { border-top: 1px solid #d9e1e6; padding: clamp(16px, 3vw, 24px); background: #f8fafb; }
+  .instagram-viewer { border-top: 1px solid var(--water-border); padding: clamp(16px, 3vw, 24px); background: var(--water-page); }
   h3 { margin: 0 0 8px; font-size: 21px; }
-  p { color: #59656e; font-size: 14px; line-height: 1.6; }
+  p { color: var(--water-muted); font-size: 14px; line-height: 1.6; }
   .intro p { margin: 0 0 20px; }
   label { font-size: 14px; font-weight: 600; }
-  select, button { box-sizing: border-box; min-height: 44px; border: 1px solid #9caab3; border-radius: 8px; padding: 10px 12px; font: inherit; color: #242724; background: white; }
-  button { cursor: pointer; background: #edf2f5; font-weight: 600; }
-  button:hover { background: #dee8ee; }
-  :is(select, button):focus-visible { outline: 3px solid #426b88; outline-offset: 3px; }
+  select, button { box-sizing: border-box; min-height: 44px; border: 1px solid var(--water-border); border-radius: 8px; padding: 10px 12px; font: inherit; color: var(--water-ink); background: white; }
+  button { cursor: pointer; background: var(--water-page); font-weight: 600; }
+  button:hover { background: var(--water-hover); }
+  :is(select, button):focus-visible { outline: 3px solid var(--water-blue); outline-offset: 3px; }
   #source-message:empty { display: none; }
   .feed-toolbar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin: 20px 0; }
   select { max-width: 100%; }
-  .empty { padding: 28px; border: 1px dashed #9caab3; border-radius: 10px; text-align: center; background: white; }
+  .empty { padding: 28px; border: 1px dashed var(--water-border); border-radius: 10px; text-align: center; background: white; }
   .feed-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 20px; align-items: start; }
-  .feed-grid :global(.feed-card) { min-width: 0; padding: 16px; border: 1px solid #d9e1e6; border-radius: 10px; background: white; overflow: hidden; }
+  .feed-grid :global(.feed-card) { min-width: 0; padding: 16px; border: 1px solid var(--water-border); border-radius: 10px; background: white; overflow: hidden; }
   .feed-grid :global(.feed-card-heading) { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
   .feed-grid :global(h4) { margin: 0; overflow-wrap: anywhere; font-size: 16px; }
-  .feed-grid :global(a) { display: inline-block; margin: 12px 0; color: #354d5f; font-size: 14px; }
-  .feed-grid :global(iframe) { display: block; width: 100%; height: 560px; border: 0; background: #f8fafb; }
-  .feed-grid :global(a:focus-visible) { outline: 3px solid #426b88; outline-offset: 3px; }
+  .feed-grid :global(a) { display: inline-block; margin: 12px 0; color: var(--water-blue); font-size: 14px; }
+  .feed-grid :global(iframe) { display: block; width: 100%; height: 560px; border: 0; background: var(--water-page); }
+  .feed-grid :global(a:focus-visible) { outline: 3px solid var(--water-blue); outline-offset: 3px; }
   [hidden], .feed-grid :global([hidden]) { display: none; }
   .embed-note { margin-bottom: 0; }
   @media (max-width: 480px) { .feed-grid :global(.feed-card) { padding: 10px; } }
