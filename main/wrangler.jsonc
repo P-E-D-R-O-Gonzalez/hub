@@ -10,7 +10,7 @@
     "run_worker_first": ["/api/auth", "/api/callback"]
   },
   "vars": {
-    "SITE_ORIGIN": "https://hub.pdgonzalez2004.workers.dev",
+    "SITE_ORIGIN": "https://fontanaware.org",
     "GITHUB_CLIENT_ID": "Ov23livhkZh1mSWf08qg",
     "GITHUB_CLIENT_SECRET": "312b038bb7a49f0ad897b62382abc775b06623b8"
     },
