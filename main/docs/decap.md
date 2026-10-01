@@ -42,7 +42,7 @@ to the Git repository root. Do not run the proxy from the Astro subdirectory.
 
 ## Cloudflare Workers deployment
 
-The production site is `https://hub.pdgonzalez2004.workers.dev` on **Workers**.
+The production site is `https://fontanaware.org` on **Workers**.
 Earlier Pages instructions do not apply. `wrangler.jsonc` serves the Astro `dist`
 assets and runs `worker/index.js` for `/api/auth` and `/api/callback`.
 No Astro SSR adapter is needed.
@@ -63,8 +63,8 @@ those commits to rebuild and deploy the public site automatically.
 In GitHub **Settings → Developer settings → OAuth Apps → New OAuth App**, use:
 
 - Application name: `Fontana Aware CMS`
-- Homepage URL: `https://hub.pdgonzalez2004.workers.dev`
-- Authorization callback URL: `https://hub.pdgonzalez2004.workers.dev/api/callback`
+- Homepage URL: `https://fontanaware.org`
+- Authorization callback URL: `https://fontanaware.org/api/callback`
 
 In Cloudflare **Workers & Pages → hub → Settings → Variables and Secrets**, add:
 
@@ -76,7 +76,7 @@ Do not paste the client secret into chat, the CMS config, or source files. The
 points to this origin and the `api/auth` login route.
 
 Deploy the updated Worker and visit
-`https://hub.pdgonzalez2004.workers.dev/admin/`. Sign in with a GitHub account that
+`https://fontanaware.org/admin/`. Sign in with a GitHub account that
 has write access to `P-E-D-R-O-Gonzalez/hub`. The OAuth App requests GitHub's `repo`
 scope for Decap's GitHub backend; the callback checks write access to this repository
 before returning the token to the CMS. GitHub's authorization screen explains the

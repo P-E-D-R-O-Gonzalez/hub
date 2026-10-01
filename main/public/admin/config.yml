@@ -3,7 +3,7 @@
     "name": "github",
     "repo": "P-E-D-R-O-Gonzalez/hub",
     "branch": "main",
-    "base_url": "https://hub.pdgonzalez2004.workers.dev",
+    "base_url": "https://fontanaware.org",
     "auth_endpoint": "api/auth"
   },
   "local_backend": true,
