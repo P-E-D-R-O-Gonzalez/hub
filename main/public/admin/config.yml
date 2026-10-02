@@ -15,6 +15,114 @@
       "label": "Pages",
       "files": [
         {
+          "name": "homepage",
+          "label": "Home page",
+          "file": "main/src/data/homepage.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "sections",
+              "label": "Sections",
+              "widget": "list",
+              "required": false,
+              "collapsed": true,
+              "summary": "{{fields.title}}",
+              "hint": "Drag to reorder. Turn off Show on homepage to hide a section without deleting it. Use at most one Local Media section.",
+              "fields": [
+                {
+                  "name": "type",
+                  "label": "Section type",
+                  "widget": "select",
+                  "options": [
+                    {
+                      "label": "Link button",
+                      "value": "link"
+                    },
+                    {
+                      "label": "Embedded website",
+                      "value": "embed"
+                    },
+                    {
+                      "label": "Text only",
+                      "value": "text"
+                    },
+                    {
+                      "label": "Local Media (use once)",
+                      "value": "media"
+                    }
+                  ],
+                  "default": "link"
+                },
+                {
+                  "name": "enabled",
+                  "label": "Show on homepage",
+                  "widget": "boolean",
+                  "default": true,
+                  "required": false
+                },
+                {
+                  "name": "title",
+                  "label": "Title",
+                  "widget": "string"
+                },
+                {
+                  "name": "description",
+                  "label": "Description",
+                  "widget": "text",
+                  "required": false
+                },
+                {
+                  "name": "button_label",
+                  "label": "Button text",
+                  "widget": "string",
+                  "required": false,
+                  "hint": "Required for every type except Text only."
+                },
+                {
+                  "name": "url",
+                  "label": "Website or page link",
+                  "widget": "string",
+                  "required": false,
+                  "hint": "Required for Link button and Embedded website. Use https:// or a local path such as /localgroups/."
+                },
+                {
+                  "name": "embed_url",
+                  "label": "Embed URL",
+                  "widget": "string",
+                  "required": false,
+                  "hint": "Required only for Embedded website. Use an HTTPS embed URL; some websites do not allow embedding."
+                },
+                {
+                  "name": "panel_title",
+                  "label": "Panel title",
+                  "widget": "string",
+                  "required": false,
+                  "hint": "Optional accessible title for an embedded website or Local Media. Defaults to the section title."
+                }
+              ]
+            },
+            {
+              "name": "footer_links",
+              "label": "Footer links",
+              "widget": "list",
+              "required": false,
+              "fields": [
+                {
+                  "name": "label",
+                  "label": "Link text",
+                  "widget": "string"
+                },
+                {
+                  "name": "url",
+                  "label": "Website or page link",
+                  "widget": "string",
+                  "hint": "Use https:// or a local path such as /getting-involved/."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "getting_involved",
           "label": "Get Involved",
           "file": "main/src/data/getting-involved.md",

@@ -102,3 +102,24 @@ website protocols at build time, and renders descriptions as escaped plain text.
 The Decap 3.x CDN bundle loads only on the admin page. References:
 [installation](https://decapcms.org/docs/install-decap-cms/) and
 [file collections](https://decapcms.org/docs/collection-file/).
+
+## Editing the home page
+
+Open `/admin/` and select **Pages → Home page**. Expand a section to change its
+heading, description, and button text. Add or remove sections, drag them to change
+their order, or turn off **Show on homepage** to keep a section as a hidden draft.
+The existing eight cards and footer links have been migrated without changing their content.
+
+Choose **Link button** for an internal page or external website, **Embedded website**
+for a panel loaded on click, **Text only** for an announcement, or **Local Media**
+for the existing Instagram viewer (at most one visible Local Media section).
+Link and embed cards require a website/page link and button text. Embed cards also
+require an HTTPS embed URL. Some providers block embedding; their Visit website
+link remains available. Use HTTPS external URLs or local paths such as `/localgroups/`.
+Titles and descriptions are plain text, not HTML. Footer links are editable and reorderable.
+Branding, weather settings, and Instagram source accounts remain configured in code.
+
+Content is saved to `main/src/data/homepage.json`. Publishing commits the data;
+Cloudflare must build and deploy that commit before the homepage changes. Spanish
+translations are optional and remain under **Pages → Spanish translations**.
+Invalid links or incomplete visible cards fail the build with a Home page error.

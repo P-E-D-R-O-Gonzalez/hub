@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Brand from '../components/Brand.astro';
 import Weather from '../components/Weather.astro';
 import InstagramFeed from '../components/InstagramFeed.astro';
+import content from '../data/homepage.json';
+import { readHomepage } from '../lib/homepage';
+const homepage = readHomepage(content);
 ---
 
 <Layout>
@@ -15,82 +18,34 @@ import InstagramFeed from '../components/InstagramFeed.astro';
       <Weather />
     </header>
     <main aria-label="Hub boxes">
-      <section id="box-1" class="box water-panel" aria-labelledby="card-title-1">
-        <div class="card-content">
-          <h2 id="card-title-1">Fontana Calendar</h2>
-          <p class="card-description">Meetings, agendas and attachments.</p>
-          <div class="card-actions"><a class="card-action" href="https://fontana.legistar.com/Calendar.aspx" target="_blank" rel="noopener noreferrer">View calendar</a></div>
-        </div>
-        
-      </section>
-      <section id="box-2" class="box water-panel" aria-labelledby="card-title-2">
-        <div class="card-content">
-          <h2 id="card-title-2">Traffic Cameras</h2>
-          <p class="card-description">Check nearby road conditions.</p>
-          <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-1" aria-expanded="false">Load Traffic Cams</button>
-          <a class="source-link" href="https://trafficvision.live/?state=California&search=Fontana" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a></div>
-        </div>
-        <iframe id="frame-1" data-src="https://trafficvision.live/?state=California&search=Fontana" data-source-title="Traffic cameras" title="Traffic cameras" hidden></iframe>
-      </section>
-      <section id="box-3" class="box water-panel" aria-labelledby="card-title-3">
-        <div class="card-content">
-          <h2 id="card-title-3">On Demand Videos</h2>
-          <p class="card-description">Watch recorded city programs.</p>
-          <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-2" aria-expanded="false">Load Videos</button>
-          <a class="source-link" href="https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a></div>
-        </div>
-        <iframe id="frame-2" data-src="https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1" data-source-title="On demand videos" title="On demand videos" hidden></iframe>
-      </section>
-      <section id="box-4" class="box water-panel" aria-labelledby="card-title-4">
-        <div class="card-content">
-          <h2 id="card-title-4">Fontana Data</h2>
-          <p class="card-description">Explore city maps and public data.</p>
-          <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-3" aria-expanded="false">Load City Data</button>
-          <a class="source-link" href="https://data.fontanaca.gov/" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a></div>
-        </div>
-        <iframe id="frame-3" data-src="https://arcg.is/01ejfO0" data-source-title="City open data" title="City open data" hidden></iframe>
-      </section>
-      <section id="box-5" class="box water-panel" aria-labelledby="card-title-5">
-        <div class="card-content">
-          <h2 id="card-title-5">Flock Map</h2>
-          <p class="card-description">Find mapped camera locations.</p>
-          <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-4" aria-expanded="false">Load Flock map</button>
-          <a class="source-link" href="https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a></div>
-        </div>
-        <iframe id="frame-4" data-src="https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00" data-source-title="Flock map" title="Flock map" hidden></iframe>
-      </section>
-      <section id="box-6" class="box water-panel" aria-labelledby="card-title-6">
-        <div class="card-content">
-          <h2 id="card-title-6">Fontana TV</h2>
-          <p class="card-description">Watch the local city broadcast.</p>
-          <div class="card-actions"><button type="button" class="load-frame" aria-controls="frame-5" aria-expanded="false">Load Fontana TV</button>
-          <a class="source-link" href="https://watchkfon.fontana.org/internetchannel/watch-now?site=1&channel=1" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a></div>
-        </div>
-        <iframe id="frame-5" data-src="https://watchkfon.fontana.org/internetchannel/watch-now?site=1&channel=1" data-source-title="Fontana TV" title="Fontana TV" hidden></iframe>
-      </section>
-      <section id="box-7" class="box water-panel" aria-labelledby="card-title-7">
-        <div class="card-content">
-          <h2 id="card-title-7">Local Groups</h2>
-          <p class="card-description">Discover local news and groups.</p>
-          <div class="card-actions"><a class="card-action" href="/localgroups/">Browse groups</a></div>
-        </div>
-        
-      </section>
-      <section id="box-8" class="box water-panel" aria-labelledby="card-title-8">
-        <div class="card-content">
-          <h2 id="card-title-8">Local Media</h2>
-          <p class="card-description">Browse updates from local sources.</p>
-          <div class="card-actions"><button type="button" class="load-frame" aria-controls="local-media-viewer" aria-expanded="false">Load Local Media</button></div>
-        </div>
-        <div id="local-media-viewer" data-data-source-title="Local Media" title="Local Media" hidden><InstagramFeed /></div>
-      </section>
+      {homepage.sections.map((section, index) => {
+        const panelId = `home-panel-${index}`;
+        const headingId = `card-title-${index}`;
+        const external = section.url.startsWith('https://');
+        return (
+          <section id={`box-${index + 1}`} class="box water-panel" aria-labelledby={headingId}>
+            <div class="card-content">
+              <h2 id={headingId}>{section.title}</h2>
+              {section.description && <p class="card-description">{section.description}</p>}
+              {section.type !== 'text' && <div class="card-actions">
+                {section.type === 'link' ? (
+                  <a class="card-action" href={section.url} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>{section.button_label}</a>
+                ) : (
+                  <button type="button" class="load-frame" aria-controls={panelId} aria-expanded="false">{section.button_label}</button>
+                )}
+                {section.type === 'embed' && <a class="source-link" href={section.url} target={external ? '_blank' : undefined} rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a>}
+              </div>}
+            </div>
+            {section.type === 'embed' && <iframe id={panelId} data-src={section.embed_url} data-source-title={section.panel_title} title={section.panel_title} referrerpolicy="strict-origin-when-cross-origin" hidden></iframe>}
+            {section.type === 'media' && <div id={panelId} data-source-title={section.panel_title} title={section.panel_title} hidden><InstagramFeed /></div>}
+          </section>
+        );
+      })}
     </main>
     <footer class="water-panel">
       <nav aria-label="Community links">
-     <a href="https://www.fontana311.org/s/" target="_blank">Report a city issue</a>
-     <a href="https://forms.gle/iPsVVdThTcscaAPo7" target="_blank">Send feedback</a>
-          <a href="/getting-involved/">Get involved</a>
-          </nav>
+        {homepage.footer_links.map(link => <a href={link.url} target={link.url.startsWith('https://') ? '_blank' : undefined} rel="noopener noreferrer">{link.label}</a>)}
+      </nav>
     </footer>
   </div>
 </Layout>
@@ -250,6 +205,7 @@ import InstagramFeed from '../components/InstagramFeed.astro';
     font-weight: 600;
   }
   .card-description {
+    white-space: pre-line;
     margin: 0 0 24px;
     color: var(--water-muted);
     font-size: 14px;
