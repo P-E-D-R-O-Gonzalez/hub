@@ -21,7 +21,18 @@
   },
   "climate-change": {
     "title": "Climate Change Groups",
-    "entries": []
+    "entries": [
+      {
+        "link": "https://www.ccaej.org/",
+        "name": "The Center for Community Action and Environmental Justice (CCAEJ)",
+        "summary": "a progressive equity-based organization that embodies hope, unites people y pueblos, to create intersectional solutions that transform communities “to bring people together to improve their social and natural environment.” Utilizing the lens of environmental health, we achieve regenerative change by developing resilient BIPOC intergenerational leadership, through the power of community base-building. Through strategic campaigns, we cultivate inclusive self-sustaining neighborhoods, where everyone can live, work, play, and thrive."
+      },
+      {
+        "name": "The People’s Collective for Environmental Justice (PC4EJ)",
+        "link": "https://pc4ej.org/",
+        "summary": "Dedicated to educating and empowering communities through research, public awareness, and capacity-building efforts focused on environmental justice. \nOur mission is to advance knowledge, resources, and community-led solutions to address pollution, environmental challenges, and inequitable development practices impacting our communities."
+      }
+    ]
   },
   "religious": {
     "title": "Religious Groups",
@@ -29,6 +40,22 @@
   },
   "immigration": {
     "title": "Immigration Groups",
-    "entries": []
+    "entries": [
+      {
+        "link": "https://ic4ij.org/",
+        "name": "Inland Coalition for Immigrant Justice",
+        "summary": "The ICIJ, is composed of over 35 organizations that serve the immigrant community in the Inland Empire. The IC4IJ currently focuses on advocacy, changing the narrative, and capacity building. Our coalition engages in policy advocacy, community organizing and education, and rapid response to ICE and border patrol operations. We are collectively changing the narrative of the one million immigrants who live, thrive, and are a foundational part of the fabric of the IE. We are building organizational capacity through leadership development, cooperation, support networks, and shared regional strategies. Lastly, the IC4IJ provides resources such as training, technical support, and grants to coalition partners to further support their efforts and mission in the region."
+      },
+      {
+        "link": "https://www.chirla.org/",
+        "name": "The Coalition for Humane Immigrant Rights (CHIRLA)",
+        "summary": "CHIRLA is a California leader with national impact made of diverse immigrant families and individuals who act as agents of social change to achieve a world with freedom of mobility, full human rights, and true participatory democracy. CHIRLA’s mission is to achieve a just society fully inclusive of immigrants."
+      },
+      {
+        "link": "https://www.theieiyc.org/",
+        "name": "The Inland Empire Immigrant Youth Collective",
+        "summary": "As an undocumented youth-led grassroots organization, we are deeply committed to creating meaningful change within our community. Our programs address the unique challenges faced by immigrant youth, fostering an environment of growth, healing, and empowerment. From building a supportive community to engaging in civic action, our programs and services nurture, educate, and inspire."
+      }
+    ]
   }
 }
