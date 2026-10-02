@@ -19,6 +19,7 @@ import { defaultSources } from '../lib/instagram';
 
 <script>
   const root = document.querySelector<HTMLElement>('.instagram-viewer')!;
+  if (root) {
   const message = root.querySelector<HTMLElement>('[role="status"]')!;
   const filter = root.querySelector<HTMLSelectElement>('select')!;
   const grid = root.querySelector<HTMLElement>('.feed-grid')!;
@@ -77,6 +78,7 @@ import { defaultSources } from '../lib/instagram';
   });
   root.parentElement?.addEventListener('panel-open', loadVisible);
   render();
+  }
 </script>
 
 <style>

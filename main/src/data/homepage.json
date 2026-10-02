@@ -1,0 +1,92 @@
+{
+  "sections": [
+    {
+      "type": "link",
+      "enabled": true,
+      "title": "Calendar",
+      "description": "Meetings, agendas and attachments.",
+      "button_label": "View calendar",
+      "url": "https://example.com"
+    },
+    {
+      "type": "embed",
+      "enabled": true,
+      "title": "Traffic",
+      "description": "Check nearby road conditions.",
+      "button_label": "Load Traffic Cams",
+      "url": "https://example.com",
+      "embed_url": "https://example.com",
+      "panel_title": "Traffic"
+    },
+    {
+      "type": "embed",
+      "enabled": true,
+      "title": "On Demand Videos",
+      "description": "Watch recorded city programs.",
+      "button_label": "Load Videos",
+      "url": "https://example.com",
+      "embed_url": "https://example.com",
+      "panel_title": "On demand videos"
+    },
+    {
+      "type": "embed",
+      "enabled": true,
+      "title": "Your Page Name Data",
+      "description": "Explore city maps and public data.",
+      "button_label": "Load City Data",
+      "url": "https://example.com",
+      "embed_url": "https://example.com",
+      "panel_title": "City open data"
+    },
+    {
+      "type": "embed",
+      "enabled": true,
+      "title": "Flock Map",
+      "description": "Find mapped camera locations.",
+      "button_label": "Load Flock map",
+      "url": "https://maps.deflock.org/",
+      "embed_url": "https://maps.deflock.org/",
+      "panel_title": "Flock map"
+    },
+    {
+      "type": "embed",
+      "enabled": true,
+      "title": "Your Page name TV",
+      "description": "Watch the local city broadcast.",
+      "button_label": "Load TV",
+      "url": "https://example.com",
+      "embed_url": "https://example.com",
+      "panel_title": "TV"
+    },
+    {
+      "type": "link",
+      "enabled": true,
+      "title": "Local Groups",
+      "description": "Discover local news and groups.",
+      "button_label": "Browse groups",
+      "url": "/localgroups/"
+    },
+    {
+      "type": "media",
+      "enabled": true,
+      "title": "Local Media",
+      "description": "Browse updates from local sources.",
+      "button_label": "Load Local Media",
+      "panel_title": "Local Media"
+    }
+  ],
+  "footer_links": [
+    {
+      "label": "Report a city issue",
+      "url": "https://example.com"
+    },
+    {
+      "label": "Send feedback",
+      "url": "https://example.com"
+    },
+    {
+      "label": "Get involved",
+      "url": "/getting-involved/"
+    }
+  ]
+}
