@@ -148,137 +148,23 @@
           "format": "json",
           "fields": [
             {
-              "name": "news",
-              "label": "Local News Groups",
-              "widget": "object",
+              "name": "categories",
+              "label": "Categories",
+              "label_singular": "Category",
+              "widget": "list",
+              "required": false,
+              "collapsed": true,
+              "summary": "{{fields.title}}",
+              "hint": "Add a category, then add its groups. Drag categories to change their order in the website menu. Removing a category removes all groups inside it.",
               "fields": [
                 {
                   "name": "title",
-                  "label": "Section title",
-                  "widget": "string"
-                },
-                {
-                  "name": "entries",
-                  "label": "Groups",
-                  "widget": "list",
-                  "required": false,
-                  "summary": "{{fields.name}}",
-                  "fields": [
-                    {
-                      "name": "name",
-                      "label": "Group name",
-                      "widget": "string"
-                    },
-                    {
-                      "name": "link",
-                      "label": "Website",
-                      "widget": "string",
-                      "required": false,
-                      "pattern": [
-                        "^https?://[^\\s]+$",
-                        "Use a full http:// or https:// website URL."
-                      ]
-                    },
-                    {
-                      "name": "summary",
-                      "label": "Description",
-                      "widget": "text"
-                    }
+                  "label": "Category name",
+                  "widget": "string",
+                  "pattern": [
+                    ".*\\S.*",
+                    "Enter a category name."
                   ]
-                }
-              ]
-            },
-            {
-              "name": "climate-change",
-              "label": "Climate Change Groups",
-              "widget": "object",
-              "fields": [
-                {
-                  "name": "title",
-                  "label": "Section title",
-                  "widget": "string"
-                },
-                {
-                  "name": "entries",
-                  "label": "Groups",
-                  "widget": "list",
-                  "required": false,
-                  "summary": "{{fields.name}}",
-                  "fields": [
-                    {
-                      "name": "name",
-                      "label": "Group name",
-                      "widget": "string"
-                    },
-                    {
-                      "name": "link",
-                      "label": "Website",
-                      "widget": "string",
-                      "required": false,
-                      "pattern": [
-                        "^https?://[^\\s]+$",
-                        "Use a full http:// or https:// website URL."
-                      ]
-                    },
-                    {
-                      "name": "summary",
-                      "label": "Description",
-                      "widget": "text"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "name": "religious",
-              "label": "Religious Groups",
-              "widget": "object",
-              "fields": [
-                {
-                  "name": "title",
-                  "label": "Section title",
-                  "widget": "string"
-                },
-                {
-                  "name": "entries",
-                  "label": "Groups",
-                  "widget": "list",
-                  "required": false,
-                  "summary": "{{fields.name}}",
-                  "fields": [
-                    {
-                      "name": "name",
-                      "label": "Group name",
-                      "widget": "string"
-                    },
-                    {
-                      "name": "link",
-                      "label": "Website",
-                      "widget": "string",
-                      "required": false,
-                      "pattern": [
-                        "^https?://[^\\s]+$",
-                        "Use a full http:// or https:// website URL."
-                      ]
-                    },
-                    {
-                      "name": "summary",
-                      "label": "Description",
-                      "widget": "text"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "name": "immigration",
-              "label": "Immigration Groups",
-              "widget": "object",
-              "fields": [
-                {
-                  "name": "title",
-                  "label": "Section title",
-                  "widget": "string"
                 },
                 {
                   "name": "entries",

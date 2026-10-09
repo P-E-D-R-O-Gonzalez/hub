@@ -6,8 +6,9 @@ supports headings, paragraphs, lists, links, and images. The body starts empty;
 no placeholder content is displayed. Content lives in `src/data/getting-involved.md`
 and publishing requires a site rebuild, just like Local Groups.
 
-Open `/admin/`, then **Pages → Local Groups**, to edit section titles and add,
-reorder, or remove groups in the four categories. Each group has a name, optional
+Open `/admin/`, then **Pages → Local Groups → Categories**, to add, rename,
+reorder, or remove categories. Expand a category to add, reorder, or remove its groups.
+Category order controls the website dropdown. Deleting a category deletes its groups. Each group has a name, optional
 website, and plain-text description. Content lives in `src/data/local-groups.json`.
 
 ## Editing Spanish translations
