@@ -8,6 +8,7 @@ You should totally get Involved and be active in your community.
 * [Exchange Club Of Fontana](https://exchangecluboffontana.org/)
 * [California State Parks - Inland Empire District](https://app.betterimpact.com/PublicOrganization/9c092e9f-8c6e-46e9-b19f-48d3f4f3a41c/1)
 * [U.S. Green Building Council California (USGBC)](https://usgbc-ca.org/volunteer-with-us/)
+* [Youth Action Project (YAP)](https://youthactionproject.org/)
 * [Inland Empire Coalition for Immigrant Justice (IC4IJ)](https://ic4ij.org/get-involved)
 * [Fontana People's Campaign](https://www.mobilize.us/fontanapeoplescampaign/)
 * [Ronald McDonald House Charities of Southern California (RMHCSC)](https://www.rmhcsc.org/inlandempire/volunteer)
