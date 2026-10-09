@@ -1,7 +1,7 @@
 ---
 title: Get Involved
 ---
-You should totally get Involved and be active in your community.
+I encourage you to get involved and take an active role in your community
 
 * [City of Fontana Volunteer](https://www.fontanaca.gov/327/Volunteers)
 * [Mayor's Youth Advisory Council (MYAC)](https://www.fontanaca.gov/233/Mayors-Youth-Advisory-Council-MYAC)
