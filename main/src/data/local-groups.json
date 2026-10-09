@@ -37,7 +37,13 @@
     },
     {
       "title": "Religious Groups",
-      "entries": []
+      "entries": [
+        {
+          "link": "https://www.faithstreet.com/fontana-ca",
+          "name": "Fontana Church Directory",
+          "summary": "Faith Street's Fontana Church Directory of 85 listed churches"
+        }
+      ]
     },
     {
       "title": "Immigration Groups",

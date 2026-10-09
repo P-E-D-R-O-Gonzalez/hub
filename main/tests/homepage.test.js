@@ -4,10 +4,10 @@ import { readFileSync } from 'node:fs';
 import { readHomepage } from '../src/lib/homepage.ts';
 const content = JSON.parse(readFileSync(new URL('../src/data/homepage.json', import.meta.url)));
 
-test('existing homepage migrates with its eight cards and footer', () => {
+test('published homepage retains its visible cards and footer links', () => {
   const home = readHomepage(content);
-  assert.equal(home.sections.length, 8);
-  assert.equal(home.footer_links.length, 3);
+  assert.equal(home.sections.length, content.sections.filter(section => section.enabled !== false).length);
+  assert.deepEqual(home.footer_links, content.footer_links);
   assert.equal(home.sections[3].embed_url, 'https://arcg.is/01ejfO0');
 });
 
