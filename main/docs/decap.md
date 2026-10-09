@@ -127,3 +127,11 @@ Invalid links or incomplete visible cards fail the build with a Home page error.
 Template setup: replace `https://example.com` links and embed URLs in **Home page**
 with your own destinations before publishing. Example URLs are placeholders, not
 working calendar, video, or city-data integrations.
+
+## Managing group categories
+
+In **Pages → Local Groups → Categories**, add, rename, reorder, or remove categories.
+Expand a category to manage its groups. Category order sets the website dropdown
+order. Removing a category removes the groups inside it. Existing template content
+is preserved; only its JSON structure changes to a categories list. Blank template
+rows remain unpublished. Publish and rebuild the site for changes to appear.

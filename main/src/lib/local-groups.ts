@@ -10,13 +10,14 @@ export interface GroupSection {
   entries: GroupEntry[];
 }
 
-// add your categories here
-const categories = ['news', 'climate-change', 'religious', 'immigration'];
-
 export function readLocalGroups(content: unknown): GroupSection[] {
-  if (!content || typeof content !== 'object') throw new Error('Invalid Local Groups content.');
-  return categories.map(id => {
-    const section = (content as Record<string, any>)[id];
+  if (!content || typeof content !== 'object' || Array.isArray(content)) throw new Error('Invalid Local Groups content.');
+  const data = content as Record<string, any>;
+  // Accept older content while existing CMS sessions transition to the category list.
+  const categories = Object.hasOwn(data, 'categories') ? data.categories ?? [] : Object.values(data);
+  if (!Array.isArray(categories)) throw new Error('Local Groups categories must be a list.');
+  return categories.map((section, index) => {
+    const id = `group-category-${index + 1}`;
     if (!section || typeof section.title !== 'string' || !section.title.trim()) throw new Error(`Missing title for ${id}.`);
     const entries = section.entries ?? [];
     if (!Array.isArray(entries)) throw new Error(`Invalid groups for ${id}.`);

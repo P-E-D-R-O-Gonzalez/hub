@@ -1,29 +1,31 @@
 {
-  "news": {
-    "title": "Local News Groups",
-    "entries": [
-      {
-        "name": "",
-        "link": "",
-        "summary": ""
-      },
-      {
-        "name": "",
-        "link": "",
-        "summary": ""
-      }
-    ]
-  },
-  "climate-change": {
-    "title": "Climate Change Groups",
-    "entries": []
-  },
-  "religious": {
-    "title": "Religious Groups",
-    "entries": []
-  },
-  "immigration": {
-    "title": "Immigration Groups",
-    "entries": []
-  }
+  "categories": [
+    {
+      "title": "Local News Groups",
+      "entries": [
+        {
+          "name": "",
+          "link": "",
+          "summary": ""
+        },
+        {
+          "name": "",
+          "link": "",
+          "summary": ""
+        }
+      ]
+    },
+    {
+      "title": "Climate Change Groups",
+      "entries": []
+    },
+    {
+      "title": "Religious Groups",
+      "entries": []
+    },
+    {
+      "title": "Immigration Groups",
+      "entries": []
+    }
+  ]
 }

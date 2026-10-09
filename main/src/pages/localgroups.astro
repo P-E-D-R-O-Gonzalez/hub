@@ -17,7 +17,7 @@ const sections = readLocalGroups(content);
       <p>Explore groups and ways to get involved in your community.</p>
     </header>
     <main>
-      <div class="section-picker">
+      <div class="section-picker" hidden={sections.length === 0}>
         <label for="group-section">Choose a section</label>
         <select id="group-section" aria-controls="group-information">
           <option value="">Select a section</option>
@@ -25,7 +25,7 @@ const sections = readLocalGroups(content);
         </select>
       </div>
       <div id="group-information" aria-live="polite" aria-atomic="true">
-        <p id="selection-hint">Choose a section above to see its information.</p>
+        <p id="selection-hint">{sections.length ? 'Choose a section above to see its information.' : 'No categories have been added yet.'}</p>
         {sections.map((section) => (
           <section data-group-section={section.id} aria-labelledby={`${section.id}-heading`} hidden>
             <h2 id={`${section.id}-heading`}>{section.title}</h2>
