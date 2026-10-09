@@ -18,3 +18,4 @@ You should totally get Involved and be active in your community.
 * [Inland Empire Harm Reduction](https://www.ieharmreduction.org/get-involved/)
 * [Feeding America IE](https://www.feedingamericaie.org/getinvolved)
 * [HomeAid Inland Empire](https://www.homeaidie.org/)
+* [Fontana Chamber of Commerce Directory](https://business.fontanachamber.org/memberdirectory/Search/family-community-civic-organizations-324866?cid=349367)
