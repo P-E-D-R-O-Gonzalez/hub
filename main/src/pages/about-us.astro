@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Brand from '../components/Brand.astro';
+import { Content, rawContent } from '../data/about-us.md';
+
+const hasContent = rawContent().trim().length > 0;
+---
+
+<Layout>
+  <main class="about-us">
+    <header class="water-panel">
+      <div><Brand /></div>
+      <a href="/">Back to home</a>
+      <h1>About Us</h1>
+    </header>
+    {hasContent && <div class="content water-panel"><Content /></div>}
+  </main>
+</Layout>
+
+<style>
+  .about-us {
+    box-sizing: border-box;
+    min-height: 100svh;
+    padding: clamp(16px, 3vw, 40px);
+    background: var(--water-page);
+    color: var(--water-ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+  }
+  header, .content {
+    box-sizing: border-box;
+    max-width: 960px;
+    margin: 0 auto 20px;
+    padding: clamp(20px, 4vw, 36px);
+    border: 1px solid var(--water-border);
+    border-radius: 12px;
+    background: #fff;
+    overflow-wrap: anywhere;
+  }
+  h1 { margin: 16px 0 8px; font-size: clamp(28px, 5vw, 48px); line-height: 1.2; }
+  .about-us :global(a) { color: var(--water-blue); }
+  .about-us :global(a:focus-visible) { outline: 3px solid var(--water-blue); outline-offset: 3px; }
+  .content :global(h2), .content :global(h3) { line-height: 1.3; }
+  .content :global(> :first-child) { margin-top: 0; }
+  .content :global(> :last-child) { margin-bottom: 0; }
+  .content :global(img) { max-width: 100%; height: auto; }
+  .content :global(pre) { overflow-x: auto; }
+</style>

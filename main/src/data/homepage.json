@@ -91,6 +91,10 @@
     {
       "url": "https://www.gasbuddy.com/gaspricemap?lat=34.08366466624751&lng=-117.4701140517953&z=13",
       "label": "Find Cheap Gas"
+    },
+    {
+      "label": "About Us",
+      "url": "/about-us/"
     }
   ]
 }

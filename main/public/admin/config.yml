@@ -142,6 +142,25 @@
           ]
         },
         {
+          "name": "about_us",
+          "label": "About Us",
+          "file": "main/src/data/about-us.md",
+          "fields": [
+            {
+              "name": "title",
+              "widget": "hidden",
+              "default": "About Us"
+            },
+            {
+              "name": "body",
+              "label": "Page content",
+              "widget": "markdown",
+              "required": false,
+              "hint": "Tell visitors about your organization. Leave empty to show only the About Us heading."
+            }
+          ]
+        },
+        {
           "name": "local_groups",
           "label": "Local Groups",
           "file": "main/src/data/local-groups.json",

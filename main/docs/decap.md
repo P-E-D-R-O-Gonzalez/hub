@@ -124,3 +124,11 @@ Content is saved to `main/src/data/homepage.json`. Publishing commits the data;
 Cloudflare must build and deploy that commit before the homepage changes. Spanish
 translations are optional and remain under **Pages → Spanish translations**.
 Invalid links or incomplete visible cards fail the build with a Home page error.
+
+## About Us
+
+Open **Pages → About Us** to edit the Markdown body at `/about-us/`. The page uses
+the same layout as Get Involved, including the brand, back link, and language toggle.
+The body starts empty. Content is stored in `main/src/data/about-us.md`. The homepage
+footer includes an About Us link, editable under **Home page → Footer links**.
+Publish and rebuild/deploy the site for changes to appear.
