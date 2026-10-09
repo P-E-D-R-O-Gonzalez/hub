@@ -51,6 +51,15 @@ const homepage = readHomepage(content);
 
 <script>
   const frameButtons = document.querySelectorAll<HTMLButtonElement>('.load-frame');
+  function stopPanelMedia(panel: HTMLElement) {
+    const frames = panel instanceof HTMLIFrameElement ? [panel] : panel.querySelectorAll('iframe');
+    frames.forEach(frame => {
+      // Unload cross-origin players as well as nested embeds; hiding them does not stop playback.
+      frame.removeAttribute('srcdoc');
+      frame.removeAttribute('src');
+    });
+    panel.querySelectorAll<HTMLMediaElement>('audio, video').forEach(media => media.pause());
+  }
   // Preserve English source titles when the visible title changes language.
   const frameTitles = new Map<string, string>();
   document.querySelectorAll<HTMLElement>('[data-source-title]').forEach(frame => {
@@ -69,6 +78,7 @@ const homepage = readHomepage(content);
           const otherFrame = document.getElementById(otherButton.getAttribute('aria-controls') ?? '');
           if (!(otherFrame instanceof HTMLElement) || otherFrame.hidden) return;
           otherFrame.hidden = true;
+          stopPanelMedia(otherFrame);
           otherFrame.closest('.box')?.classList.remove('is-expanded');
           otherButton.setAttribute('aria-expanded', 'false');
           otherButton.textContent = `Open ${frameTitles.get(otherFrame.id) || otherFrame.dataset.title || otherFrame.title}`;
@@ -79,6 +89,7 @@ const homepage = readHomepage(content);
         else if (frame.dataset.src) frame.src = frame.dataset.src;
       }
       frame.hidden = !opening;
+      if (!opening) stopPanelMedia(frame);
       if (opening) frame.dispatchEvent(new CustomEvent('panel-open'));
       frame.closest('.box')?.classList.toggle('is-expanded', opening);
       button.setAttribute('aria-expanded', String(opening));
