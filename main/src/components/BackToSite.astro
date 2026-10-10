@@ -1,0 +1,6 @@
+---
+import content from '../data/branding.json';
+import { readBranding } from '../lib/branding';
+const { siteName } = readBranding(content);
+---
+<a href="/"><span>Back to</span>{' '}<span translate="no">{siteName}</span></a>

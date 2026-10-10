@@ -13,5 +13,9 @@ export function readBranding(content: unknown) {
   const favicon = image('favicon', /\.(png|ico|svg)$/i);
   const logoAlt = typeof data.logo_alt === 'string' ? data.logo_alt.trim() : '';
   if (!logoAlt) throw new Error('Branding: logo description is required.');
-  return { logo, logoAlt, favicon };
+  const siteName = data.site_name === undefined ? logoAlt : typeof data.site_name === 'string' ? data.site_name.trim() : '';
+  if (!siteName) throw new Error('Branding: site name is required.');
+  if (data.browser_title != null && typeof data.browser_title !== 'string') throw new Error('Branding: browser title must be text.');
+  const browserTitle = typeof data.browser_title === 'string' && data.browser_title.trim() ? data.browser_title.trim() : siteName;
+  return { logo, logoAlt, favicon, siteName, browserTitle };
 }

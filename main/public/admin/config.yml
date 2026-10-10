@@ -293,6 +293,23 @@
           "format": "json",
           "fields": [
             {
+              "name": "site_name",
+              "label": "Site name",
+              "widget": "string",
+              "hint": "Used in Back to… navigation and the text logo when no image is configured.",
+              "pattern": [
+                ".*\\S.*",
+                "Enter a site name."
+              ]
+            },
+            {
+              "name": "browser_title",
+              "label": "Browser tab title",
+              "widget": "string",
+              "required": false,
+              "hint": "Used on all public pages. Leave blank to use the site name."
+            },
+            {
               "name": "logo",
               "label": "Site logo",
               "widget": "image",

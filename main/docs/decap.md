@@ -168,3 +168,12 @@ removes the panel and prevents its API requests and refresh timer.
 Publish and wait for the site build/deployment. Settings live in
 `main/src/data/weather.json`; invalid coordinates or units fail the build.
 Fontana coordinates, Fahrenheit, and mph are the initial defaults.
+
+## Site name and browser title
+
+In **Pages → Branding**, edit **Site name** to update the Back to… links on
+public subpages and the template’s text logo. Edit **Browser tab title** to set
+the title on all public pages; leave it blank to use the site name. The Back to
+prefix switches to Spanish while the chosen name remains unchanged. Publish
+and wait for deployment. Logo descriptions remain separate for accessibility.
+The CMS admin title and installed-app manifest name are separate settings.

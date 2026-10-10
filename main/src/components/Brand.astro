@@ -3,7 +3,7 @@ import brandingContent from '../data/branding.json';
 import { readBranding } from '../lib/branding';
 const branding = readBranding(brandingContent);
 ---
-<a class="brand" href="/" aria-label={branding.logoAlt} translate="no">
+<a class="brand" href="/" aria-label={branding.siteName} translate="no">
   <img class:list={{ custom: !!branding.logo }} src={branding.logo || "/android-chrome-512x512.png"} alt={branding.logoAlt} width="240" height="112" />
 </a>
 

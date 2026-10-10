@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import BackToSite from '../components/BackToSite.astro';
 import Brand from '../components/Brand.astro';
 
 
@@ -15,7 +16,7 @@ const defaultSection = sections.find(section => section.title.trim().toLowerCase
   <div class="local-groups">
     <header class="water-panel">
       <div><Brand /></div>
-      <a href="/">Back to Fontana Aware</a>
+      <BackToSite />
       <h1>Local Groups</h1>
       <p>Explore groups and ways to get involved in your community.</p>
     </header>
