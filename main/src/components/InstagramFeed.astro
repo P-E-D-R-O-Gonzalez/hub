@@ -82,20 +82,12 @@ const defaultSources = readInstagramSources(content);
     const cleanup: (() => void)[] = [];
     let cancelled = false;
     let remaining = pending.length;
-    let paintReady = false;
-    let timedOut = false;
     function finish() {
-      if (cancelled || !paintReady || (remaining > 0 && !timedOut)) return;
+      if (cancelled || remaining > 0) return;
       cancelLoading();
-      if (timedOut) message.textContent = 'Some feeds are taking longer. You can open them directly on Instagram.';
     }
-    // Give the loading state a chance to paint even when cached embeds finish quickly.
-    const minimum = window.setTimeout(() => { paintReady = true; finish(); }, 350);
-    const timeout = window.setTimeout(() => { timedOut = true; finish(); }, 8000);
     cancelLoading = () => {
       cancelled = true;
-      window.clearTimeout(minimum);
-      window.clearTimeout(timeout);
       cleanup.forEach(remove => remove());
       loading.hidden = true;
       grid.hidden = false;
