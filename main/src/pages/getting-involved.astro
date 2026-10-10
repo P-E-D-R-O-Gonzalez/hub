@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import BackToSite from '../components/BackToSite.astro';
 import Brand from '../components/Brand.astro';
 import { Content, rawContent } from '../data/getting-involved.md';
 
@@ -10,7 +11,7 @@ const hasContent = rawContent().trim().length > 0;
   <main class="getting-involved">
     <header>
       <div><Brand /></div>
-      <a href="/">Back to home</a>
+      <BackToSite />
       <h1>Get Involved</h1>
     </header>
     {hasContent && <div class="content"><Content /></div>}

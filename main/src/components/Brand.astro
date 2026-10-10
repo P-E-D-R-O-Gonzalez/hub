@@ -3,8 +3,8 @@ import brandingContent from '../data/branding.json';
 import { readBranding } from '../lib/branding';
 const branding = readBranding(brandingContent);
 ---
-<a class="brand" href="/" aria-label={branding.logoAlt} translate="no">
-  {branding.logo ? <img src={branding.logo} alt={branding.logoAlt} width="240" height="112" /> : branding.logoAlt}
+<a class="brand" href="/" aria-label={branding.siteName} translate="no">
+  {branding.logo ? <img src={branding.logo} alt={branding.logoAlt} width="240" height="112" /> : branding.siteName}
 </a>
 <style>
 .brand { display: inline-block; max-width: 100%; color: inherit; }

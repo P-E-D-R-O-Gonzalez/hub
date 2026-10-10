@@ -1,5 +1,7 @@
 {
   "logo": "",
   "logo_alt": "Your Page Name",
-  "favicon": ""
+  "favicon": "",
+  "site_name": "Your Page Name",
+  "browser_title": "Your Page Name"
 }
