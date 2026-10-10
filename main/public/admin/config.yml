@@ -321,6 +321,88 @@
               "hint": "Upload a square PNG, ICO or SVG for browser tabs. A 32×32 or 48×48 PNG works well. Clear to restore the original favicon. This does not change installed-app or Apple home-screen icons."
             }
           ]
+        },
+        {
+          "name": "weather",
+          "label": "Weather",
+          "file": "main/src/data/weather.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "enabled",
+              "label": "Show weather and air quality",
+              "widget": "boolean",
+              "default": true
+            },
+            {
+              "name": "city",
+              "label": "City / location label",
+              "widget": "string",
+              "hint": "Displayed below the conditions. Changing this label does not change the location; update the coordinates too.",
+              "pattern": [
+                ".*\\S.*",
+                "Enter a city or location name."
+              ]
+            },
+            {
+              "name": "latitude",
+              "label": "Latitude",
+              "widget": "number",
+              "value_type": "float",
+              "min": -90,
+              "max": 90,
+              "step": 0.0001,
+              "hint": "Decimal degrees, from -90 to 90."
+            },
+            {
+              "name": "longitude",
+              "label": "Longitude",
+              "widget": "number",
+              "value_type": "float",
+              "min": -180,
+              "max": 180,
+              "step": 0.0001,
+              "hint": "Decimal degrees, from -180 to 180. Locations west of Greenwich use negative values."
+            },
+            {
+              "name": "temperature_unit",
+              "label": "Temperature units",
+              "widget": "select",
+              "options": [
+                {
+                  "label": "Fahrenheit (°F)",
+                  "value": "fahrenheit"
+                },
+                {
+                  "label": "Celsius (°C)",
+                  "value": "celsius"
+                }
+              ]
+            },
+            {
+              "name": "wind_speed_unit",
+              "label": "Wind speed units",
+              "widget": "select",
+              "options": [
+                {
+                  "label": "Miles per hour (mph)",
+                  "value": "mph"
+                },
+                {
+                  "label": "Kilometers per hour (km/h)",
+                  "value": "kmh"
+                },
+                {
+                  "label": "Meters per second (m/s)",
+                  "value": "ms"
+                },
+                {
+                  "label": "Knots (kn)",
+                  "value": "kn"
+                }
+              ]
+            }
+          ]
         }
       ]
     }

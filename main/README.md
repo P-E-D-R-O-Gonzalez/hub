@@ -80,3 +80,9 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 Edit **Pages → Branding** in `/admin/` to upload the site logo and browser favicon
 and set the accessible logo description. Publish and rebuild to apply changes.
 See [CMS documentation](docs/decap.md#editing-the-logo-and-favicon).
+
+## Weather
+
+Edit **Pages → Weather** in `/admin/` to change the location label, coordinates,
+temperature and wind units, or hide the weather/air-quality panel. Publish and
+rebuild to apply changes.

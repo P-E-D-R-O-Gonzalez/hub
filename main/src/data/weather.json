@@ -1,0 +1,8 @@
+{
+  "enabled": true,
+  "city": "Fontana 92335",
+  "latitude": 34.0923,
+  "longitude": -117.4343,
+  "temperature_unit": "fahrenheit",
+  "wind_speed_unit": "mph"
+}

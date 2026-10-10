@@ -118,7 +118,7 @@ Link and embed cards require a website/page link and button text. Embed cards al
 require an HTTPS embed URL. Some providers block embedding; their Visit website
 link remains available. Use HTTPS external URLs or local paths such as `/localgroups/`.
 Titles and descriptions are plain text, not HTML. Footer links are editable and reorderable.
-Weather settings remain configured in code. Logo and browser favicon are editable under Pages → Branding. Instagram accounts are editable under Pages → Local Media.
+Weather settings are editable under Pages → Weather. Logo and browser favicon are editable under Pages → Branding. Instagram accounts are editable under Pages → Local Media.
 
 Content is saved to `main/src/data/homepage.json`. Publishing commits the data;
 Cloudflare must build and deploy that commit before the homepage changes. Spanish
@@ -156,3 +156,15 @@ branding. Uploads are saved under `main/public/uploads/`.
 Publish and wait for the build and deployment. Browsers can cache favicons;
 use a new filename when replacing an icon. Installed-app manifest icons and
 Apple home-screen icons remain separate from this browser favicon setting.
+
+## Editing weather settings
+
+Open **Pages → Weather** to change the displayed city/location name, latitude,
+longitude, temperature units, and wind speed units. Coordinates determine both
+weather and air quality; the city label alone does not relocate the readings.
+Air quality remains the US AQI scale. Turning off **Show weather and air quality**
+removes the panel and prevents its API requests and refresh timer.
+
+Publish and wait for the site build/deployment. Settings live in
+`main/src/data/weather.json`; invalid coordinates or units fail the build.
+Fontana coordinates, Fahrenheit, and mph are the initial defaults.

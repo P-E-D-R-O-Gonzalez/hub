@@ -511,6 +511,14 @@
     {
       "en": "Experience the newest way to travel out of the Inland Empire! Start your next journey at San Bernardino International Airport and skip the traffic, long lines, and high parking costs of other LA Basin airports.",
       "es": "¡Descubre la nueva forma de viajar desde el Inland Empire! Comienza tu próximo viaje en el Aeropuerto Internacional de San Bernardino y evita el tráfico, las largas filas y los altos costos de estacionamiento de otros aeropuertos de la cuenca de Los Ángeles."
+    },
+    {
+      "en": "Weather for {location}",
+      "es": "Clima en {location}"
+    },
+    {
+      "en": "Data:",
+      "es": "Datos:"
     }
   ]
 }
