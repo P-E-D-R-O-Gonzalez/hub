@@ -1,5 +1,7 @@
 ---
-import { defaultSources } from '../lib/instagram';
+import content from '../data/instagram.json';
+import { readInstagramSources } from '../lib/instagram';
+const defaultSources = readInstagramSources(content);
 ---
 
 <div class="instagram-viewer" data-defaults={JSON.stringify(defaultSources)}>

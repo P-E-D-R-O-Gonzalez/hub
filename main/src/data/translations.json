@@ -271,6 +271,14 @@
     {
       "en": "Instagram feed from {account}",
       "es": "Publicaciones de Instagram de {account}"
+    },
+    {
+      "en": "Weather for {location}",
+      "es": "Clima en {location}"
+    },
+    {
+      "en": "Data:",
+      "es": "Datos:"
     }
   ]
 }

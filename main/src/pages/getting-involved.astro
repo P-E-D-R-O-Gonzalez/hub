@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Brand from '../components/Brand.astro';
 import { Content, rawContent } from '../data/getting-involved.md';
 
 const hasContent = rawContent().trim().length > 0;
@@ -8,6 +9,7 @@ const hasContent = rawContent().trim().length > 0;
 <Layout>
   <main class="getting-involved">
     <header>
+      <div><Brand /></div>
       <a href="/">Back to home</a>
       <h1>Get Involved</h1>
     </header>

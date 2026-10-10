@@ -117,7 +117,7 @@ Link and embed cards require a website/page link and button text. Embed cards al
 require an HTTPS embed URL. Some providers block embedding; their Visit website
 link remains available. Use HTTPS external URLs or local paths such as `/localgroups/`.
 Titles and descriptions are plain text, not HTML. Footer links are editable and reorderable.
-Branding, weather settings, and Instagram source accounts remain configured in code.
+Weather settings are editable under Pages → Weather. Logo and browser favicon are editable under Pages → Branding. Instagram accounts are editable under Pages → Local Media.
 
 Content is saved to `main/src/data/homepage.json`. Publishing commits the data;
 Cloudflare must build and deploy that commit before the homepage changes. Spanish
@@ -135,3 +135,39 @@ Expand a category to manage its groups. Category order sets the website dropdown
 order. Removing a category removes the groups inside it. Existing template content
 is preserved; only its JSON structure changes to a categories list. Blank template
 rows remain unpublished. Publish and rebuild the site for changes to appear.
+
+## Editing Instagram sources
+
+Open `/admin/` and select **Pages → Local Media**. Add, remove, or drag Instagram
+sources to change their order. Enter each username with or without `@`, not a
+profile URL. Each account may appear only once. Removing every account displays
+the existing empty-state message in the viewer.
+
+Content is stored in `main/src/data/instagram.json`. Publish and wait for the
+site build and deployment before visitors see changes. Invalid or duplicate
+usernames stop the build with a Local Media error. Instagram controls whether
+a public profile can be embedded; its availability is not verified by the CMS.
+
+## Editing the logo and favicon
+
+Open **Pages → Branding** in `/admin/`. Upload a site logo and browser favicon,
+and enter an accessible logo description. Logos fit within the header without
+cropping. PNG, JPG, WebP, GIF and SVG logos are supported; favicons accept PNG,
+ICO or SVG. Use a square favicon. Clear an image field to restore the original
+branding. Uploads are saved under `main/public/uploads/`.
+
+Publish and wait for the build and deployment. Browsers can cache favicons;
+use a new filename when replacing an icon. Installed-app manifest icons and
+Apple home-screen icons remain separate from this browser favicon setting.
+
+## Editing weather settings
+
+Open **Pages → Weather** to change the displayed city/location name, latitude,
+longitude, temperature units, and wind speed units. Coordinates determine both
+weather and air quality; the city label alone does not relocate the readings.
+Air quality remains the US AQI scale. Turning off **Show weather and air quality**
+removes the panel and prevents its API requests and refresh timer.
+
+Publish and wait for the site build/deployment. Settings live in
+`main/src/data/weather.json`; invalid coordinates or units fail the build.
+Fontana coordinates, Fahrenheit, and mph are the initial defaults.

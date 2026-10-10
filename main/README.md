@@ -8,7 +8,7 @@ index.astro: change your-page-name and your-link(s), and feedback form link
 
 wrangler.jsonc: add your site domain and github id
 
-/lib/instagram: add instagram profile names
+Instagram sources: edit Pages → Local Media in /admin/
 
 /lib/local-groups.ts: add categories to category list
 
@@ -31,9 +31,8 @@ and Cloudflare Workers deployment with GitHub authentication.
 
 ## Local Media Instagram viewer
 
-Local Media uses Instagram profile embeds with multiple sources, a source filter,  
-and refresh. Edit `defaultSources` in `src/lib/instagram.ts` to change the shared  
-accounts shown to all visitors. Sources cannot be added or removed in the viewer.  
+Local Media uses Instagram profile embeds with multiple sources, a source filter,
+and refresh. Edit **Pages → Local Media** in `/admin/` to add, remove, or reorder the shared accounts shown to all visitors. Sources cannot be added or removed in the viewer.
 No API token is required.
 
 ## 🧞 Commands
@@ -51,3 +50,15 @@ All commands are run from the root of the project, from a terminal:
 |                   |                                              |
 
 
+
+## Branding
+
+Edit **Pages → Branding** in `/admin/` to upload the site logo and browser favicon
+and set the accessible logo description. Publish and rebuild to apply changes.
+See [CMS documentation](docs/decap.md#editing-the-logo-and-favicon).
+
+## Weather
+
+Edit **Pages → Weather** in `/admin/` to change the location label, coordinates,
+temperature and wind units, or hide the weather/air-quality panel. Publish and
+rebuild to apply changes.

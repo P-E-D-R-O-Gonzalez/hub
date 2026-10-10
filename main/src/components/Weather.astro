@@ -1,22 +1,22 @@
-<section class="conditions" aria-label="Weather for Fontana, CA 92335">
+---
+import content from '../data/weather.json';
+import { readWeather } from '../lib/weather';
+const weather = readWeather(content);
+---
+{weather.enabled && <section class="conditions" aria-label={`Weather for ${weather.city}`} data-weather-url={weather.weatherUrl} data-air-url={weather.airUrl} data-temperature-suffix={weather.temperatureSuffix} data-wind-suffix={weather.windSuffix}>
   <dl aria-live="polite">
     <div><dt>Temperature</dt><dd id="temperature">Loading...</dd></div>
     <div><dt>Air quality (US AQI)</dt><dd id="air-quality">Loading...</dd></div>
     <div><dt>Wind</dt><dd id="wind">Loading...</dd></div>
   </dl>
-  <small>Fontana 92335 &middot; Data: <a href="https://open-meteo.com/">Open-Meteo</a> / <a href="https://atmosphere.copernicus.eu/">CAMS</a></small>
-</section>
+  <small><span translate="no">{weather.city}</span> &middot; <span>Data:</span> <a href="https://open-meteo.com/">Open-Meteo</a> / <a href="https://atmosphere.copernicus.eu/">CAMS</a></small>
+</section>}
 
 <script>
-  // Fontana, CA 92335. Both services use the same location.
-  const coordinates = { latitude: '34.0923', longitude: '-117.4343' };
-  const weatherUrl = new URL('https://api.open-meteo.com/v1/forecast');
-  weatherUrl.search = new URLSearchParams({
-    ...coordinates, current: 'temperature_2m,wind_speed_10m',
-    temperature_unit: 'fahrenheit', wind_speed_unit: 'mph',
-  }).toString();
-  const airUrl = new URL('https://air-quality-api.open-meteo.com/v1/air-quality');
-  airUrl.search = new URLSearchParams({ ...coordinates, current: 'us_aqi' }).toString();
+  const root = document.querySelector<HTMLElement>('.conditions');
+  if (root) {
+  const weatherUrl = new URL(root.dataset.weatherUrl!);
+  const airUrl = new URL(root.dataset.airUrl!);
 
   function display(id: string, value: string) {
     const element = document.getElementById(id);
@@ -41,8 +41,8 @@
       (async () => {
         try {
           const current = await getCurrent(weatherUrl);
-          display('temperature', format(current.temperature_2m, '\u00b0F'));
-          display('wind', format(current.wind_speed_10m, ' mph'));
+          display('temperature', format(current.temperature_2m, root.dataset.temperatureSuffix!));
+          display('wind', format(current.wind_speed_10m, root.dataset.windSuffix!));
         } catch {
           display('temperature', 'Unavailable');
           display('wind', 'Unavailable');
@@ -61,6 +61,7 @@
 
   void updateConditions();
   window.setInterval(() => void updateConditions(), 15 * 60 * 1000);
+  }
 </script>
 
 <style>

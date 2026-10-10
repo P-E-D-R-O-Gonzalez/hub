@@ -1,5 +1,8 @@
 ---
 import LanguageToggle from '../components/LanguageToggle.astro';
+import brandingContent from '../data/branding.json';
+import { readBranding } from '../lib/branding';
+const branding = readBranding(brandingContent);
 // Validate CMS translations during the build as well as loading them in the browser.
 import '../lib/translations';
 ---
@@ -8,8 +11,10 @@ import '../lib/translations';
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
+		{branding.favicon ? <link rel="icon" href={branding.favicon} /> : <>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
+		</>}
 		<meta name="generator" content={Astro.generator} />
 		<title>Fontana Aware</title>
 	</head>

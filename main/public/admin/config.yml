@@ -236,6 +236,154 @@
               ]
             }
           ]
+        },
+        {
+          "name": "instagram",
+          "label": "Local Media",
+          "file": "main/src/data/instagram.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "sources",
+              "label": "Instagram sources",
+              "label_singular": "Instagram source",
+              "widget": "list",
+              "required": false,
+              "collapsed": true,
+              "summary": "@{{fields.username}}",
+              "hint": "Add, remove, or drag accounts to reorder the Local Media feeds. Leave the list empty to show no feeds. Changes appear after publishing and deployment.",
+              "fields": [
+                {
+                  "name": "username",
+                  "label": "Instagram username",
+                  "widget": "string",
+                  "hint": "Enter a username such as city_of_fontana_ca, with or without @. Do not paste a profile URL. Each account should appear only once.",
+                  "pattern": [
+                    "^@?(?!.*\\.\\.)[A-Za-z0-9_](?:[A-Za-z0-9_.]{0,28}[A-Za-z0-9_])?$",
+                    "Use 1–30 letters, numbers, underscores or periods; no spaces, URLs, consecutive periods, or periods at either end."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "branding",
+          "label": "Branding",
+          "file": "main/src/data/branding.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "logo",
+              "label": "Site logo",
+              "widget": "image",
+              "required": false,
+              "allow_multiple": false,
+              "choose_url": false,
+              "hint": "Upload a PNG, JPG, WebP, GIF or SVG. The whole image fits inside the header. Clear to restore the original branding."
+            },
+            {
+              "name": "logo_alt",
+              "label": "Logo description",
+              "widget": "string",
+              "hint": "The site name or a short description for screen readers.",
+              "pattern": [
+                ".*\\S.*",
+                "Enter a logo description."
+              ]
+            },
+            {
+              "name": "favicon",
+              "label": "Browser favicon",
+              "widget": "image",
+              "required": false,
+              "allow_multiple": false,
+              "choose_url": false,
+              "hint": "Upload a square PNG, ICO or SVG for browser tabs. A 32×32 or 48×48 PNG works well. Clear to restore the original favicon. This does not change installed-app or Apple home-screen icons."
+            }
+          ]
+        },
+        {
+          "name": "weather",
+          "label": "Weather",
+          "file": "main/src/data/weather.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "enabled",
+              "label": "Show weather and air quality",
+              "widget": "boolean",
+              "default": true
+            },
+            {
+              "name": "city",
+              "label": "City / location label",
+              "widget": "string",
+              "hint": "Displayed below the conditions. Changing this label does not change the location; update the coordinates too.",
+              "pattern": [
+                ".*\\S.*",
+                "Enter a city or location name."
+              ]
+            },
+            {
+              "name": "latitude",
+              "label": "Latitude",
+              "widget": "number",
+              "value_type": "float",
+              "min": -90,
+              "max": 90,
+              "step": 0.0001,
+              "hint": "Decimal degrees, from -90 to 90."
+            },
+            {
+              "name": "longitude",
+              "label": "Longitude",
+              "widget": "number",
+              "value_type": "float",
+              "min": -180,
+              "max": 180,
+              "step": 0.0001,
+              "hint": "Decimal degrees, from -180 to 180. Locations west of Greenwich use negative values."
+            },
+            {
+              "name": "temperature_unit",
+              "label": "Temperature units",
+              "widget": "select",
+              "options": [
+                {
+                  "label": "Fahrenheit (°F)",
+                  "value": "fahrenheit"
+                },
+                {
+                  "label": "Celsius (°C)",
+                  "value": "celsius"
+                }
+              ]
+            },
+            {
+              "name": "wind_speed_unit",
+              "label": "Wind speed units",
+              "widget": "select",
+              "options": [
+                {
+                  "label": "Miles per hour (mph)",
+                  "value": "mph"
+                },
+                {
+                  "label": "Kilometers per hour (km/h)",
+                  "value": "kmh"
+                },
+                {
+                  "label": "Meters per second (m/s)",
+                  "value": "ms"
+                },
+                {
+                  "label": "Knots (kn)",
+                  "value": "kn"
+                }
+              ]
+            }
+          ]
         }
       ]
     }

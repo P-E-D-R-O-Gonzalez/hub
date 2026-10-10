@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Brand from '../components/Brand.astro';
 import Weather from '../components/Weather.astro';
 import InstagramFeed from '../components/InstagramFeed.astro';
 import content from '../data/homepage.json';
@@ -11,7 +12,7 @@ const homepage = readHomepage(content);
   <div id="homepage-background" aria-hidden="true"></div>
   <div class="hub">
     <header>
-      <h1>Your Page Name</h1>
+      <h1><Brand /></h1>
       <time id="date">Date</time>
       <time id="clock">Time</time>
       <Weather />
