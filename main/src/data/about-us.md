@@ -1,7 +1,7 @@
 ---
 title: About Us
 ---
-Fontana Aware is built by Pedro Gonzalez who works at the intersection of AI, cybersecurity, computer science, and social impact. Driven by purpose and resilience, Pedro is committed to empowering underrepresented students in STEM and underserved communities. He prioritizes students and real impact.
+Fontana Aware is built by [Pedro Gonzalez](https://entregonzalez.com) who works at the intersection of AI, cybersecurity, computer science, and social impact. Driven by purpose and resilience, Pedro is committed to empowering underrepresented students in STEM and underserved communities. He prioritizes students and real impact.
 
 I built FontanaAware.org to make local information and civic participation easier to access. The platform is designed to be replicated by other cities, with low launch and maintenance costs and a no-code CMS that anyone can manage.
 
