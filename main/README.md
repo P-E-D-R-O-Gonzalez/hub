@@ -74,3 +74,9 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Branding
+
+Edit **Pages → Branding** in `/admin/` to upload the site logo and browser favicon
+and set the accessible logo description. Publish and rebuild to apply changes.
+See [CMS documentation](docs/decap.md#editing-the-logo-and-favicon).

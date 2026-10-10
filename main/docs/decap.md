@@ -118,7 +118,7 @@ Link and embed cards require a website/page link and button text. Embed cards al
 require an HTTPS embed URL. Some providers block embedding; their Visit website
 link remains available. Use HTTPS external URLs or local paths such as `/localgroups/`.
 Titles and descriptions are plain text, not HTML. Footer links are editable and reorderable.
-Branding and weather settings remain configured in code. Instagram accounts are editable under Pages → Local Media.
+Weather settings remain configured in code. Logo and browser favicon are editable under Pages → Branding. Instagram accounts are editable under Pages → Local Media.
 
 Content is saved to `main/src/data/homepage.json`. Publishing commits the data;
 Cloudflare must build and deploy that commit before the homepage changes. Spanish
@@ -144,3 +144,15 @@ Content is stored in `main/src/data/instagram.json`. Publish and wait for the
 site build and deployment before visitors see changes. Invalid or duplicate
 usernames stop the build with a Local Media error. Instagram controls whether
 a public profile can be embedded; its availability is not verified by the CMS.
+
+## Editing the logo and favicon
+
+Open **Pages → Branding** in `/admin/`. Upload a site logo and browser favicon,
+and enter an accessible logo description. Logos fit within the header without
+cropping. PNG, JPG, WebP, GIF and SVG logos are supported; favicons accept PNG,
+ICO or SVG. Use a square favicon. Clear an image field to restore the original
+branding. Uploads are saved under `main/public/uploads/`.
+
+Publish and wait for the build and deployment. Browsers can cache favicons;
+use a new filename when replacing an icon. Installed-app manifest icons and
+Apple home-screen icons remain separate from this browser favicon setting.
