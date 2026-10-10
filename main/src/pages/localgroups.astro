@@ -7,6 +7,7 @@ import content from '../data/local-groups.json';
 import { readLocalGroups } from '../lib/local-groups';
 
 const sections = readLocalGroups(content);
+const defaultSection = sections.find(section => section.title.trim().toLowerCase() === 'local news groups') ?? sections[0];
 
 ---
 
@@ -23,13 +24,13 @@ const sections = readLocalGroups(content);
         <label for="group-section">Choose a section</label>
         <select id="group-section" aria-controls="group-information">
           <option value="">Select a section</option>
-          {sections.map((section) => <option value={section.id}>{section.title}</option>)}
+          {sections.map((section) => <option value={section.id} selected={section.id === defaultSection?.id}>{section.title}</option>)}
         </select>
       </div>
       <div id="group-information" aria-live="polite" aria-atomic="true">
-        <p id="selection-hint">{sections.length ? 'Choose a section above to see its information.' : 'No categories have been added yet.'}</p>
+        <p id="selection-hint" hidden={!!defaultSection}>{sections.length ? 'Choose a section above to see its information.' : 'No categories have been added yet.'}</p>
         {sections.map((section) => (
-          <section data-group-section={section.id} aria-labelledby={`${section.id}-heading`} hidden>
+          <section data-group-section={section.id} aria-labelledby={`${section.id}-heading`} hidden={section.id !== defaultSection?.id}>
             <h2 id={`${section.id}-heading`}>{section.title}</h2>
             {section.entries.length > 0 ? (
               <ul class="group-entries">
