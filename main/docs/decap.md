@@ -118,7 +118,7 @@ Link and embed cards require a website/page link and button text. Embed cards al
 require an HTTPS embed URL. Some providers block embedding; their Visit website
 link remains available. Use HTTPS external URLs or local paths such as `/localgroups/`.
 Titles and descriptions are plain text, not HTML. Footer links are editable and reorderable.
-Branding, weather settings, and Instagram source accounts remain configured in code.
+Branding and weather settings remain configured in code. Instagram accounts are editable under Pages → Local Media.
 
 Content is saved to `main/src/data/homepage.json`. Publishing commits the data;
 Cloudflare must build and deploy that commit before the homepage changes. Spanish
@@ -132,3 +132,15 @@ the same layout as Get Involved, including the brand, back link, and language to
 The body starts empty. Content is stored in `main/src/data/about-us.md`. The homepage
 footer includes an About Us link, editable under **Home page → Footer links**.
 Publish and rebuild/deploy the site for changes to appear.
+
+## Editing Instagram sources
+
+Open `/admin/` and select **Pages → Local Media**. Add, remove, or drag Instagram
+sources to change their order. Enter each username with or without `@`, not a
+profile URL. Each account may appear only once. Removing every account displays
+the existing empty-state message in the viewer.
+
+Content is stored in `main/src/data/instagram.json`. Publish and wait for the
+site build and deployment before visitors see changes. Invalid or duplicate
+usernames stop the build with a Local Media error. Instagram controls whether
+a public profile can be embedded; its availability is not verified by the CMS.

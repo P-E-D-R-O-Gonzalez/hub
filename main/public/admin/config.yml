@@ -255,6 +255,36 @@
               ]
             }
           ]
+        },
+        {
+          "name": "instagram",
+          "label": "Local Media",
+          "file": "main/src/data/instagram.json",
+          "format": "json",
+          "fields": [
+            {
+              "name": "sources",
+              "label": "Instagram sources",
+              "label_singular": "Instagram source",
+              "widget": "list",
+              "required": false,
+              "collapsed": true,
+              "summary": "@{{fields.username}}",
+              "hint": "Add, remove, or drag accounts to reorder the Local Media feeds. Leave the list empty to show no feeds. Changes appear after publishing and deployment.",
+              "fields": [
+                {
+                  "name": "username",
+                  "label": "Instagram username",
+                  "widget": "string",
+                  "hint": "Enter a username such as city_of_fontana_ca, with or without @. Do not paste a profile URL. Each account should appear only once.",
+                  "pattern": [
+                    "^@?(?!.*\\.\\.)[A-Za-z0-9_](?:[A-Za-z0-9_.]{0,28}[A-Za-z0-9_])?$",
+                    "Use 1–30 letters, numbers, underscores or periods; no spaces, URLs, consecutive periods, or periods at either end."
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }

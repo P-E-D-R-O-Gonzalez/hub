@@ -21,8 +21,7 @@ original language. The switch requires JavaScript; English is the default.
 ## Local Media Instagram viewer
 
 Local Media uses Instagram profile embeds with multiple sources, a source filter,
-and refresh. Edit `defaultSources` in `src/lib/instagram.ts` to change the shared
-accounts shown to all visitors. Sources cannot be added or removed in the viewer.
+and refresh. Edit **Pages → Local Media** in `/admin/` to add, remove, or reorder the shared accounts shown to all visitors. Sources cannot be added or removed in the viewer.
 No API token or Elfsight subscription is required.
 
 Embeds load when the Local Media panel opens. Instagram controls the recent posts
