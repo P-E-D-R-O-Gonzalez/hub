@@ -95,6 +95,10 @@
     {
       "label": "About Us",
       "url": "/about-us/"
+    },
+    {
+      "label": "Privacy Policy",
+      "url": "/privacy-policy/"
     }
   ]
 }
