@@ -41,7 +41,7 @@
     {
       "type": "embed",
       "enabled": true,
-      "title": "ALPR Camera locations",
+      "title": "License Plate Camera locations",
       "description": "Crowdsourced ALPR surveillance map. Data from DeFlock & OSM contributors.",
       "button_label": "Load Flock map",
       "url": "https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00",
@@ -90,17 +90,25 @@
       "url": "https://www.gasbuddy.com/gaspricemap?lat=34.08366466624751&lng=-117.4701140517953&z=13",
       "title": "Gas Buddy",
       "description": "Find the cheapest fuel no matter the type near you"
+    },
+    {
+      "type": "link",
+      "enabled": true,
+      "title": "Digital Letterbox",
+      "button_label": "Send feedback",
+      "url": "https://forms.gle/iPsVVdThTcscaAPo7",
+      "description": "Write to the people behind this whatever you want to say"
+    },
+    {
+      "type": "link",
+      "enabled": true,
+      "title": "Community Involvement",
+      "url": "/getting-involved/",
+      "button_label": "Get involved",
+      "description": "I encourage you to get involved and take an active role in your community"
     }
   ],
   "footer_links": [
-    {
-      "label": "Send feedback",
-      "url": "https://forms.gle/iPsVVdThTcscaAPo7"
-    },
-    {
-      "label": "Get involved",
-      "url": "/getting-involved/"
-    },
     {
       "label": "About Us",
       "url": "/about-us/"
