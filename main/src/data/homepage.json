@@ -19,6 +19,47 @@
       "panel_title": "Quick Maps"
     },
     {
+      "type": "link",
+      "enabled": true,
+      "title": "City Issue",
+      "url": "https://www.fontana311.org/s/",
+      "description": "Report a problem through Fontana’s official city service.",
+      "button_label": "Report a city issue",
+      "embed_url": ""
+    },
+    {
+      "type": "media",
+      "enabled": true,
+      "title": "Local Media",
+      "description": "Browse updates from local sources.",
+      "button_label": "Load Local Media",
+      "panel_title": "Local Media"
+    },
+    {
+      "type": "link",
+      "enabled": true,
+      "title": "Community Involvement",
+      "url": "/getting-involved/",
+      "button_label": "Get involved",
+      "description": "I encourage you to get involved and take an active role in your community"
+    },
+    {
+      "type": "link",
+      "enabled": true,
+      "title": "Local Groups",
+      "description": "Discover local news and groups.",
+      "button_label": "Browse groups",
+      "url": "/localgroups/"
+    },
+    {
+      "type": "link",
+      "enabled": true,
+      "button_label": "Find Cheap Gas",
+      "url": "https://www.gasbuddy.com/gaspricemap?lat=34.08366466624751&lng=-117.4701140517953&z=13",
+      "title": "Gas Buddy",
+      "description": "Find the cheapest fuel no matter the type near you"
+    },
+    {
       "type": "embed",
       "enabled": true,
       "title": "On Demand Videos",
@@ -27,16 +68,6 @@
       "url": "https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1",
       "embed_url": "https://watchkfon.fontana.org/internetchannel/gallery/2?site=1&channel=1",
       "panel_title": "On demand videos"
-    },
-    {
-      "type": "embed",
-      "enabled": true,
-      "title": "Fontana Data",
-      "description": "Explore city maps and public data.",
-      "button_label": "Load City Data",
-      "url": "https://data.fontanaca.gov/",
-      "embed_url": "https://arcg.is/01ejfO0",
-      "panel_title": "City open data"
     },
     {
       "type": "embed",
@@ -59,37 +90,14 @@
       "panel_title": "Fontana TV"
     },
     {
-      "type": "link",
+      "type": "embed",
       "enabled": true,
-      "title": "Local Groups",
-      "description": "Discover local news and groups.",
-      "button_label": "Browse groups",
-      "url": "/localgroups/"
-    },
-    {
-      "type": "media",
-      "enabled": true,
-      "title": "Local Media",
-      "description": "Browse updates from local sources.",
-      "button_label": "Load Local Media",
-      "panel_title": "Local Media"
-    },
-    {
-      "type": "link",
-      "enabled": true,
-      "title": "City Issue",
-      "url": "https://www.fontana311.org/s/",
-      "description": "Official report a city issue",
-      "button_label": "Report a city issue",
-      "embed_url": ""
-    },
-    {
-      "type": "link",
-      "enabled": true,
-      "button_label": "Find Cheap Gas",
-      "url": "https://www.gasbuddy.com/gaspricemap?lat=34.08366466624751&lng=-117.4701140517953&z=13",
-      "title": "Gas Buddy",
-      "description": "Find the cheapest fuel no matter the type near you"
+      "title": "Fontana Data",
+      "description": "Explore city maps and public data.",
+      "button_label": "Load City Data",
+      "url": "https://data.fontanaca.gov/",
+      "embed_url": "https://arcg.is/01ejfO0",
+      "panel_title": "City open data"
     },
     {
       "type": "link",
@@ -97,15 +105,7 @@
       "title": "Digital Letterbox",
       "button_label": "Send feedback",
       "url": "https://forms.gle/iPsVVdThTcscaAPo7",
-      "description": "Write to the people behind this whatever you want to say"
-    },
-    {
-      "type": "link",
-      "enabled": true,
-      "title": "Community Involvement",
-      "url": "/getting-involved/",
-      "button_label": "Get involved",
-      "description": "I encourage you to get involved and take an active role in your community"
+      "description": "Suggest a resource, report an outdated link, or share feedback."
     }
   ],
   "footer_links": [
