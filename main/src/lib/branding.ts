@@ -17,5 +17,7 @@ export function readBranding(content: unknown) {
   if (!siteName) throw new Error('Branding: site name is required.');
   if (data.browser_title != null && typeof data.browser_title !== 'string') throw new Error('Branding: browser title must be text.');
   const browserTitle = typeof data.browser_title === 'string' && data.browser_title.trim() ? data.browser_title.trim() : siteName;
-  return { logo, logoAlt, favicon, siteName, browserTitle };
+  if (data.slogan != null && typeof data.slogan !== 'string') throw new Error('Branding: slogan must be text.');
+  const slogan = typeof data.slogan === 'string' ? data.slogan.trim() : '';
+  return { logo, logoAlt, favicon, siteName, browserTitle, slogan };
 }

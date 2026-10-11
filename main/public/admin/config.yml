@@ -303,6 +303,13 @@
               ]
             },
             {
+              "name": "slogan",
+              "label": "Slogan",
+              "widget": "string",
+              "required": false,
+              "hint": "Appears at the top of every page, to the left of the language buttons. Leave blank to hide. Add the same English text and its Spanish translation in Spanish translations."
+            },
+            {
               "name": "browser_title",
               "label": "Browser tab title",
               "widget": "string",
