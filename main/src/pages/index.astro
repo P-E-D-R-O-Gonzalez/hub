@@ -53,6 +53,7 @@ const homepage = readHomepage(content);
 <script>
   const frameButtons = document.querySelectorAll<HTMLButtonElement>('.load-frame');
   function stopPanelMedia(panel: HTMLElement) {
+    panel.dispatchEvent(new CustomEvent('panel-close'));
     const frames = panel instanceof HTMLIFrameElement ? [panel] : panel.querySelectorAll('iframe');
     frames.forEach(frame => {
       // Unload cross-origin players as well as nested embeds; hiding them does not stop playback.

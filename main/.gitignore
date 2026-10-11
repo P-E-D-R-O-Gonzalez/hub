@@ -27,3 +27,6 @@ pnpm-debug.log*
 .wrangler/
 .dev.vars
 .dev.vars.*
+
+# Local wizard backups
+.setup-backups/

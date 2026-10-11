@@ -1,18 +1,23 @@
- Template Purpose:
+# Community dashboard template
 
-Make it easy for communities and cities to have a relevant dashboard. They should have all information they need in  an accessible way. We all deserve the opportunity to be civily engaged in local matters.
+Make it easy for communities and cities to find local information and get involved.
 
-Template setup guide:
+## Start here
 
-index.astro: change your-page-name and your-link(s), and feedback form link
+Follow the [beginner setup guide](docs/setup.md). From this `main` folder, run:
 
-wrangler.jsonc: add your site domain and github id
+```sh
+npm install
+npm run setup
+```
 
-Instagram sources: edit Pages → Local Media in /admin/
+The wizard asks five questions about your website, then configures Decap CMS,
+Cloudflare hosting, and your site name. Open the generated `SETUP-CHECKLIST.md`
+for the remaining account and secret steps. Never enter secrets into the wizard.
+No configuration files need to be edited manually.
 
-/lib/local-groups.ts: add categories to category list
-
-/src/data/local-groups.json: add your data manually or through CMS(see below)
+Once connected, use `/admin/` to edit the Home page, Branding, Weather, Local Groups,
+and Local Media. Replace example links before sharing your website.
 
 ## Languages
 

@@ -30,6 +30,7 @@ export async function handleRequest(request, env, fetcher = fetch) {
   const origin = env.SITE_ORIGIN;
   if (url.origin !== origin || !origin?.startsWith('https://')) return text('Invalid authentication origin', 403);
   if (!env.GITHUB_CLIENT_ID || !env.GITHUB_CLIENT_SECRET) return text('CMS login is not configured. Set GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET on the Worker.', 503);
+  if (!/^[A-Za-z0-9-]+\/[A-Za-z0-9_.-]+$/.test(env.GITHUB_REPO || '')) return text('CMS repository is not configured. Run npm run setup and redeploy.', 503);
   const callback = `${origin}/api/callback`;
   if (url.pathname === '/api/auth') {
     if (url.searchParams.get('provider') !== 'github') return text('Unsupported provider', 400);
@@ -58,11 +59,11 @@ export async function handleRequest(request, env, fetcher = fetch) {
     });
     const result = await response.json();
     if (!response.ok || typeof result.access_token !== 'string' || result.error) throw new Error('Token exchange failed');
-    const permission = await fetcher('https://api.github.com/repos/P-E-D-R-O-Gonzalez/hub', {
-      headers: { Authorization: `Bearer ${result.access_token}`, Accept: 'application/vnd.github+json', 'User-Agent': 'Fontana-Aware-CMS' },
+    const permission = await fetcher(`https://api.github.com/repos/${env.GITHUB_REPO}`, {
+      headers: { Authorization: `Bearer ${result.access_token}`, Accept: 'application/vnd.github+json', 'User-Agent': 'Community-Hub-CMS' },
       signal: AbortSignal.timeout(15000),
     });
-    if (!permission.ok || !(await permission.json()).permissions?.push) return popup(origin, { message: 'Your GitHub account needs write access to the hub repository.' }, false);
+    if (!permission.ok || !(await permission.json()).permissions?.push) return popup(origin, { message: 'Your GitHub account needs write access to the configured website repository.' }, false);
     return popup(origin, { token: result.access_token, provider: 'github' }, true);
   } catch {
     return popup(origin, { message: 'GitHub sign in failed. Please retry or check the OAuth App configuration.' }, false);

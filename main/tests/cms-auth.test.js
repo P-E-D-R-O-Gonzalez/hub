@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import worker, { handleRequest } from '../worker/index.js';
 const origin = 'https://hub.pdgonzalez2004.workers.dev';
-const env = { SITE_ORIGIN: origin, GITHUB_CLIENT_ID: 'test-id', GITHUB_CLIENT_SECRET: 'test-secret', ASSETS: { fetch: () => new Response('asset') } };
+const env = { SITE_ORIGIN: origin, GITHUB_REPO: 'example/community', GITHUB_CLIENT_ID: 'test-id', GITHUB_CLIENT_SECRET: 'test-secret', ASSETS: { fetch: () => new Response('asset') } };
 async function start() {
   const response = await handleRequest(new Request(`${origin}/api/auth?provider=github`), env);
   return { response, target: new URL(response.headers.get('Location')), cookie: response.headers.get('Set-Cookie').split(';')[0] };
@@ -21,6 +21,13 @@ test('authorization uses PKCE and a secure state cookie', async () => {
   assert.match(response.headers.get('Set-Cookie'), /HttpOnly; Secure; SameSite=Lax/);
   assert.ok(target.searchParams.get('state'));
 });
+
+test('missing or invalid repository configuration fails closed', async () => {
+  for (const repo of ['', undefined, 'owner/repo/extra', 'owner/repo?query']) {
+    const response = await handleRequest(new Request(`${origin}/api/auth?provider=github`), { ...env, GITHUB_REPO: repo });
+    assert.equal(response.status, 503);
+  }
+});
 test('missing, wrong and expired state never exchange tokens', async () => {
   const { cookie, target } = await start();
   const state = target.searchParams.get('state');
@@ -35,6 +42,7 @@ test('successful callback checks repository access and restricts popup messages'
   const fetcher = async (_url, options) => {
     calls++;
     if (calls === 1) { assert.ok(JSON.parse(options.body).code_verifier); return Response.json({ access_token: 'test-token' }); }
+    assert.equal(_url, 'https://api.github.com/repos/example/community');
     return Response.json({ permissions: { push: true } });
   };
   const response = await handleRequest(new Request(`${origin}/api/callback?code=abc&state=${target.searchParams.get('state')}`, { headers: { Cookie: cookie } }), env, fetcher);
