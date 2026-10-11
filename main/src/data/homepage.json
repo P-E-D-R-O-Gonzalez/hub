@@ -11,7 +11,7 @@
     {
       "type": "embed",
       "enabled": true,
-      "title": "Quick Map",
+      "title": "Caltrans Quick Map",
       "description": "Check highway conditions.",
       "button_label": "Load Quick Maps",
       "url": "https://quickmap.dot.ca.gov/",
