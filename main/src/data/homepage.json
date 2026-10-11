@@ -73,13 +73,18 @@
       "description": "Browse updates from local sources.",
       "button_label": "Load Local Media",
       "panel_title": "Local Media"
+    },
+    {
+      "type": "link",
+      "enabled": true,
+      "title": "City Issue",
+      "url": "https://www.fontana311.org/s/",
+      "description": "Official report a city issue",
+      "button_label": "Report a city issue",
+      "embed_url": ""
     }
   ],
   "footer_links": [
-    {
-      "label": "Report a city issue",
-      "url": "https://www.fontana311.org/s/"
-    },
     {
       "label": "Send feedback",
       "url": "https://forms.gle/iPsVVdThTcscaAPo7"
