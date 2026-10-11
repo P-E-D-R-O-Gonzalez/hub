@@ -543,6 +543,38 @@
     {
       "en": "Some feeds are taking longer. You can open them directly on Instagram.",
       "es": "Algunas fuentes están tardando más. Puedes abrirlas directamente en Instagram."
+    },
+    {
+      "en": "Caltrans Quick Map",
+      "es": "Mapa rápido de Caltrans"
+    },
+    {
+      "en": "Check highway conditions.",
+      "es": "Consulta las condiciones de las autopistas."
+    },
+    {
+      "en": "Load Quick Maps",
+      "es": "Cargar mapas rápidos"
+    },
+    {
+      "en": "Quick Maps",
+      "es": "Mapas rápidos"
+    },
+    {
+      "en": "ALPR Camera locations",
+      "es": "Ubicaciones de cámaras de lectura automática de matrículas (ALPR)"
+    },
+    {
+      "en": "Crowdsourced ALPR surveillance map. Data from DeFlock & OSM contributors.",
+      "es": "Mapa colaborativo de vigilancia mediante lectura automática de matrículas (ALPR). Datos de colaboradores de DeFlock y OSM."
+    },
+    {
+      "en": "Terms and Conditions",
+      "es": "Términos y condiciones"
+    },
+    {
+      "en": "Return to site",
+      "es": "Volver al sitio"
     }
   ]
 }
