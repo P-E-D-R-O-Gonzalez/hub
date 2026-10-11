@@ -11,12 +11,12 @@
     {
       "type": "embed",
       "enabled": true,
-      "title": "Traffic Cameras",
+      "title": "Quick Map",
       "description": "Check nearby road conditions.",
-      "button_label": "Load Traffic Cams",
-      "url": "https://trafficvision.live/?state=California&search=Fontana",
-      "embed_url": "https://trafficvision.live/?state=California&search=Fontana",
-      "panel_title": "Traffic cameras"
+      "button_label": "Load Quick Maps",
+      "url": "https://quickmap.dot.ca.gov/",
+      "embed_url": "https://quickmap.dot.ca.gov/?view=34.1292%2C-117.4549%2C12&layers=border_wait%2Ccaltrans_districts%2Ccameras%2Cchp_incidents%2Ccms%2Ccounty_boundaries%2Cfull_closures%2Chighway_info%2Clane_closures%2Cspeed",
+      "panel_title": "Quick Maps"
     },
     {
       "type": "embed",
