@@ -110,12 +110,12 @@
   ],
   "footer_links": [
     {
-      "label": "About Us",
-      "url": "/about-us/"
-    },
-    {
       "label": "Privacy Policy",
       "url": "/privacy-policy/"
+    },
+    {
+      "label": "About Us",
+      "url": "/about-us/"
     },
     {
       "label": "Terms and Conditions",
