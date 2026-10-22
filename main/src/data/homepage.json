@@ -70,14 +70,14 @@
       "panel_title": "On demand videos"
     },
     {
-      "type": "embed",
+      "type": "link",
       "enabled": true,
-      "title": "License Plate Camera locations",
-      "description": "Crowdsourced ALPR surveillance map. Data from DeFlock & OSM contributors.",
-      "button_label": "Load Flock map",
-      "url": "https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00",
-      "embed_url": "https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00",
-      "panel_title": "Flock map"
+      "title": "ICE Activity",
+      "description": "Collection of ICE Activity sources coming soon!",
+      "button_label": "Be Informed",
+      "url": "/ice",
+      "embed_url": "",
+      "panel_title": ""
     },
     {
       "type": "embed",
