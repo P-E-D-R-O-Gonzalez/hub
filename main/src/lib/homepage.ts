@@ -25,7 +25,7 @@ function link(value: unknown, label: string, embed = false): string {
   return result;
 }
 
-export function readHomepage(content: unknown): { sections: HomeSection[]; footer_links: { label: string; url: string }[] } {
+export function readHomepage(content: unknown, { allowEmptyTextCards = false } = {}): { sections: HomeSection[]; footer_links: { label: string; url: string }[] } {
   if (!content || typeof content !== 'object') throw new Error('Invalid Home page content.');
   const data = content as Record<string, any>;
   const rawSections = data.sections ?? [];
@@ -39,7 +39,7 @@ export function readHomepage(content: unknown): { sections: HomeSection[]; foote
     if (section.enabled === false) continue;
     if (!['link', 'embed', 'text', 'media'].includes(section.type)) throw new Error('Unknown Home page section type.');
     if (section.type === 'media' && ++mediaCount > 1) throw new Error('Use only one visible Local Media section.');
-    const title = text(section.title, 'section title');
+    const title = text(section.title, 'section title', !(allowEmptyTextCards && section.type === 'text'));
     sections.push({
       type: section.type,
       title,

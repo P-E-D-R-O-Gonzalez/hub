@@ -1,0 +1,9 @@
+---
+import HubPage from '../components/HubPage.astro';
+import content from '../data/ice.json';
+import homeContent from '../data/homepage.json';
+import { readHomepage } from '../lib/homepage';
+const homepage = readHomepage({ ...content, footer_links: homeContent.footer_links }, { allowEmptyTextCards: true });
+---
+
+<HubPage homepage={homepage} pageTitle="ICE" />
