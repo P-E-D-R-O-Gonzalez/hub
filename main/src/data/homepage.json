@@ -75,7 +75,7 @@
       "title": "ICE Activity",
       "description": "Collection of ICE Activity sources coming soon!",
       "button_label": "Be Informed",
-      "url": "/ice",
+      "url": "/ice/",
       "embed_url": "",
       "panel_title": ""
     },
