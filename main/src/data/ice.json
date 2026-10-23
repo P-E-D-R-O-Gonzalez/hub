@@ -12,6 +12,15 @@
     {
       "type": "embed",
       "enabled": true,
+      "title": "Flock Hopper",
+      "description": "Free turn-by-turn directions around the 140,000+ Flock and ALPR cameras mapped by DeFlock volunteers.",
+      "url": "https://dontgetflocked.com/",
+      "embed_url": "https://dontgetflocked.com/",
+      "button_label": "Find routes"
+    },
+    {
+      "type": "embed",
+      "enabled": true,
       "title": "ICE Plate Tracker",
       "description": "National database of confirmed vehicles used in ICE kidnappings.",
       "button_label": "View Plates",
@@ -19,28 +28,31 @@
       "embed_url": "https://www.stopice.net/platetracker/index.cgi"
     },
     {
-      "type": "text",
+      "type": "embed",
       "enabled": true,
-      "title": "",
-      "description": ""
+      "title": "ICE Hotlines",
+      "description": "California Rapid Response Networks",
+      "url": "https://www.ccijustice.org/carrn",
+      "embed_url": "https://www.ccijustice.org/carrn",
+      "button_label": "Find Hotlines"
+    },
+    {
+      "type": "embed",
+      "enabled": true,
+      "title": "ICE resources",
+      "description": "Inland Colliation for Immigrant Justice Resources",
+      "url": "https://ic4ij.org/resources",
+      "embed_url": "https://ic4ij.org/resources",
+      "button_label": "Find Resources"
     },
     {
       "type": "text",
       "enabled": true,
-      "title": "",
-      "description": ""
-    },
-    {
-      "type": "text",
-      "enabled": true,
-      "title": "",
-      "description": ""
-    },
-    {
-      "type": "text",
-      "enabled": true,
-      "title": "",
-      "description": ""
+      "title": "ICE Toolkit",
+      "description": "This toolkit provides essential Know Your Rights information to help protect our community in situations involving immigration agents.",
+      "button_label": "View Toolkit",
+      "embed_url": "https://www.ccijustice.org/carrn-toolkit",
+      "url": "https://www.ccijustice.org/carrn-toolkit"
     },
     {
       "type": "text",
