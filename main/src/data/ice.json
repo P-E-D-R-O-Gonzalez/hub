@@ -53,30 +53,6 @@
       "enabled": true,
       "title": "",
       "description": ""
-    },
-    {
-      "type": "text",
-      "enabled": true,
-      "title": "",
-      "description": ""
-    },
-    {
-      "type": "text",
-      "enabled": true,
-      "title": "",
-      "description": ""
-    },
-    {
-      "type": "text",
-      "enabled": true,
-      "title": "",
-      "description": ""
-    },
-    {
-      "type": "text",
-      "enabled": true,
-      "title": "",
-      "description": ""
     }
   ]
 }
