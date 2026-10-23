@@ -10,12 +10,12 @@
       "button_label": "Open Map"
     },
     {
-      "type": "embed",
+      "type": "link",
       "enabled": true,
       "title": "Flock Hopper",
       "description": "Free turn-by-turn directions around the 140,000+ Flock and ALPR cameras mapped by DeFlock volunteers.",
       "url": "https://dontgetflocked.com/",
-      "embed_url": "https://dontgetflocked.com/",
+      "embed_url": "",
       "button_label": "Find routes"
     },
     {
