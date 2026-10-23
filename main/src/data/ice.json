@@ -46,7 +46,7 @@
       "button_label": "Find Resources"
     },
     {
-      "type": "text",
+      "type": "embed",
       "enabled": true,
       "title": "ICE Toolkit",
       "description": "This toolkit provides essential Know Your Rights information to help protect our community in situations involving immigration agents.",
