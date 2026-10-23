@@ -1,16 +1,22 @@
 {
   "sections": [
     {
-      "type": "text",
+      "type": "embed",
       "enabled": true,
-      "title": "",
-      "description": ""
+      "title": "Flock Map",
+      "description": "Crowded Sourced automated license plate readers location",
+      "embed_url": "https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00",
+      "url": "https://maps.deflock.org/?lat=34.0923&lng=-117.4343&zoom=11.00",
+      "button_label": "Open Map"
     },
     {
-      "type": "text",
+      "type": "embed",
       "enabled": true,
-      "title": "",
-      "description": ""
+      "title": "ICE Plate Tracker",
+      "description": "National database of confirmed vehicles used in ICE kidnappings.",
+      "button_label": "View Plates",
+      "url": "https://www.stopice.net/platetracker/index.cgi",
+      "embed_url": "https://www.stopice.net/platetracker/index.cgi"
     },
     {
       "type": "text",
