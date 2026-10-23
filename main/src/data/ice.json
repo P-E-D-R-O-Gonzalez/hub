@@ -28,15 +28,6 @@
       "button_label": "Find Hotlines"
     },
     {
-      "type": "link",
-      "enabled": true,
-      "title": "Flock Hopper",
-      "description": "Free turn-by-turn directions around the 140,000+ Flock and ALPR cameras mapped by DeFlock volunteers.",
-      "url": "https://dontgetflocked.com/",
-      "embed_url": "",
-      "button_label": "Find routes"
-    },
-    {
       "type": "embed",
       "enabled": true,
       "title": "Alert Network",
@@ -44,6 +35,15 @@
       "url": "https://www.stopice.net/",
       "embed_url": "https://www.stopice.net/",
       "button_label": "Get Alerts"
+    },
+    {
+      "type": "link",
+      "enabled": true,
+      "title": "Flock Hopper",
+      "description": "Free turn-by-turn directions around the 140,000+ Flock and ALPR cameras mapped by DeFlock volunteers.",
+      "url": "https://dontgetflocked.com/",
+      "embed_url": "",
+      "button_label": "Find routes"
     },
     {
       "type": "embed",
@@ -66,6 +66,15 @@
     {
       "type": "embed",
       "enabled": true,
+      "url": "https://iceout.org/en/",
+      "embed_url": "https://iceout.org/en/info/about",
+      "description": "People Over Papers provides immigrant communities with real-time information, educates them on their rights and resources, and ignites awareness to build collective safety.",
+      "title": "ICE Out",
+      "button_label": "Open ICE Out"
+    },
+    {
+      "type": "embed",
+      "enabled": true,
       "title": "ICE Activity Tracker",
       "description": "Track ICE activity near you",
       "button_label": "See Activity",
@@ -75,16 +84,7 @@
     {
       "type": "embed",
       "enabled": true,
-      "url": "https://iceout.org/en/",
-      "embed_url": "https://iceout.org/en/info/about",
-      "description": "People Over Papers provides immigrant communities with real-time information, educates them on their rights and resources, and ignites awareness to build collective safety.",
-      "title": "ICE Out",
-      "button_label": "Open ICE Out"
-    },
-    {
-      "type": "media",
-      "enabled": true,
-      "title": "Social Media",
+      "title": "View ",
       "button_label": "Open Media Feed"
     }
   ]
