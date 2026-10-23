@@ -55,16 +55,22 @@
       "url": "https://www.ccijustice.org/carrn-toolkit"
     },
     {
-      "type": "text",
+      "type": "embed",
       "enabled": true,
-      "title": "",
-      "description": ""
+      "title": "ICE Activity Tracker",
+      "description": "Track ICE activity near you",
+      "button_label": "See Activity",
+      "url": "https://www.iceinmyarea.org/",
+      "embed_url": "https://www.iceinmyarea.org/"
     },
     {
-      "type": "text",
+      "type": "embed",
       "enabled": true,
-      "title": "",
-      "description": ""
+      "title": "Alert Network",
+      "description": "Send & Receive alerts about ICE activity in your area. No app required, works with any phone. Alerts are anonymous. Stopice does not track or save personal information",
+      "url": "https://www.stopice.net/",
+      "embed_url": "https://www.stopice.net/",
+      "button_label": "Get Alerts"
     }
   ]
 }
