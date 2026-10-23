@@ -10,15 +10,6 @@
       "button_label": "Open Map"
     },
     {
-      "type": "link",
-      "enabled": true,
-      "title": "Flock Hopper",
-      "description": "Free turn-by-turn directions around the 140,000+ Flock and ALPR cameras mapped by DeFlock volunteers.",
-      "url": "https://dontgetflocked.com/",
-      "embed_url": "",
-      "button_label": "Find routes"
-    },
-    {
       "type": "embed",
       "enabled": true,
       "title": "ICE Plate Tracker",
@@ -35,6 +26,24 @@
       "url": "https://www.ccijustice.org/carrn",
       "embed_url": "https://www.ccijustice.org/carrn",
       "button_label": "Find Hotlines"
+    },
+    {
+      "type": "link",
+      "enabled": true,
+      "title": "Flock Hopper",
+      "description": "Free turn-by-turn directions around the 140,000+ Flock and ALPR cameras mapped by DeFlock volunteers.",
+      "url": "https://dontgetflocked.com/",
+      "embed_url": "",
+      "button_label": "Find routes"
+    },
+    {
+      "type": "embed",
+      "enabled": true,
+      "title": "Alert Network",
+      "description": "Send & Receive alerts about ICE activity in your area. No app required, works with any phone. Alerts are anonymous. Stopice does not track or save personal information",
+      "url": "https://www.stopice.net/",
+      "embed_url": "https://www.stopice.net/",
+      "button_label": "Get Alerts"
     },
     {
       "type": "embed",
@@ -66,11 +75,17 @@
     {
       "type": "embed",
       "enabled": true,
-      "title": "Alert Network",
-      "description": "Send & Receive alerts about ICE activity in your area. No app required, works with any phone. Alerts are anonymous. Stopice does not track or save personal information",
-      "url": "https://www.stopice.net/",
-      "embed_url": "https://www.stopice.net/",
-      "button_label": "Get Alerts"
+      "url": "https://iceout.org/en/",
+      "embed_url": "https://iceout.org/en/info/about",
+      "description": "People Over Papers provides immigrant communities with real-time information, educates them on their rights and resources, and ignites awareness to build collective safety.",
+      "title": "ICE Out",
+      "button_label": "Open ICE Out"
+    },
+    {
+      "type": "media",
+      "enabled": true,
+      "title": "Social Media",
+      "button_label": "Open Media Feed"
     }
   ]
 }
