@@ -73,7 +73,7 @@
       "type": "link",
       "enabled": true,
       "title": "ICE Activity",
-      "description": "Collection of ICE Activity sources coming soon!",
+      "description": "Collection of ICE Activity sources",
       "button_label": "Be Informed",
       "url": "/ice/",
       "embed_url": "",
