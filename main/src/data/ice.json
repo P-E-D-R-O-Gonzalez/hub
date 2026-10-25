@@ -82,7 +82,7 @@
       "embed_url": "https://www.iceinmyarea.org/"
     },
     {
-      "type": "embed",
+      "type": "media",
       "enabled": true,
       "title": "View ",
       "button_label": "Open Media Feed"
