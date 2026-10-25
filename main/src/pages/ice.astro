@@ -6,4 +6,4 @@ import { readHomepage } from '../lib/homepage';
 const homepage = readHomepage({ ...content, footer_links: homeContent.footer_links }, { allowEmptyTextCards: true });
 ---
 
-<HubPage homepage={homepage} pageTitle="ICE" />
+<HubPage homepage={homepage} pageTitle="ICE" mediaSourcesContent={{ sources: content.sources }} />

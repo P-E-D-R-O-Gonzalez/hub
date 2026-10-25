@@ -24,5 +24,5 @@ test('CMS writes the same source file that the viewer reads', () => {
   assert.doesNotThrow(()=>readInstagramSources(content));
   const viewer = readFileSync(new URL('../src/components/InstagramFeed.astro',import.meta.url),'utf8');
   assert.match(viewer, /import content from '..\/data\/instagram.json'/);
-  assert.match(viewer, /readInstagramSources\(content\)/);
+  assert.match(viewer, /readInstagramSources\(sourcesContent\)/);
 });

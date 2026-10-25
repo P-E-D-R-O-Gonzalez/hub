@@ -8,8 +8,9 @@ import type { readHomepage } from '../lib/homepage';
 interface Props {
   homepage: ReturnType<typeof readHomepage>;
   pageTitle?: string;
+  mediaSourcesContent?: unknown;
 }
-const { homepage, pageTitle } = Astro.props;
+const { homepage, pageTitle, mediaSourcesContent } = Astro.props;
 ---
 
 <Layout>
@@ -42,7 +43,7 @@ const { homepage, pageTitle } = Astro.props;
               </div>}
             </div>
             {section.type === 'embed' && <iframe id={panelId} data-src={section.embed_url} data-source-title={section.panel_title} title={section.panel_title} referrerpolicy="strict-origin-when-cross-origin" hidden></iframe>}
-            {section.type === 'media' && <div id={panelId} data-source-title={section.panel_title} title={section.panel_title} hidden><InstagramFeed /></div>}
+            {section.type === 'media' && <div id={panelId} data-source-title={section.panel_title} title={section.panel_title} hidden><InstagramFeed sourcesContent={mediaSourcesContent} /></div>}
           </section>
         );
       })}

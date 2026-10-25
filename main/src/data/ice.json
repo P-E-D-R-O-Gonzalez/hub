@@ -87,5 +87,19 @@
       "title": "View ",
       "button_label": "Open Media Feed"
     }
+  ],
+  "sources": [
+    {
+      "username": "fontana.decolonized"
+    },
+    {
+      "username": "we_keep_us_safe_ie"
+    },
+    {
+      "username": "ic4ij"
+    },
+    {
+      "username": "stopicenet"
+    }
   ]
 }

@@ -1,7 +1,9 @@
 ---
 import content from '../data/instagram.json';
 import { readInstagramSources } from '../lib/instagram';
-const defaultSources = readInstagramSources(content);
+interface Props { sourcesContent?: unknown; }
+const { sourcesContent = content } = Astro.props;
+const defaultSources = readInstagramSources(sourcesContent);
 ---
 
 <div class="instagram-viewer" data-defaults={JSON.stringify(defaultSources)}>

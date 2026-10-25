@@ -210,6 +210,28 @@
                   "hint": "Optional accessible title for an embedded website or Local Media. Defaults to the section title."
                 }
               ]
+            },
+            {
+              "name": "sources",
+              "label": "ICE media sources",
+              "label_singular": "Instagram source",
+              "widget": "list",
+              "required": false,
+              "collapsed": true,
+              "summary": "@{{fields.username}}",
+              "hint": "Instagram accounts for the ICE page only. Add, remove, or drag accounts to reorder. Leave empty to show no feeds. Home page Local Media sources are managed separately.",
+              "fields": [
+                {
+                  "name": "username",
+                  "label": "Instagram username",
+                  "widget": "string",
+                  "hint": "Enter a username such as city_of_fontana_ca, with or without @. Do not paste a profile URL. Each account should appear only once.",
+                  "pattern": [
+                    "^@?(?!.*\\.\\.)[A-Za-z0-9_](?:[A-Za-z0-9_.]{0,28}[A-Za-z0-9_])?$",
+                    "Use 1–30 letters, numbers, underscores or periods; no spaces, URLs, consecutive periods, or periods at either end."
+                  ]
+                }
+              ]
             }
           ]
         },
