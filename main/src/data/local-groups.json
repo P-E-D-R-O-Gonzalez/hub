@@ -149,6 +149,91 @@
           "summary": "Fontana Community Little League (FCLL) is a non-profit organization dedicated to providing high-quality youth baseball programs for children in our community. We rely on the generous support of local businesses to continue offering a fun, safe, and rewarding experience for our players and families."
         }
       ]
+    },
+    {
+      "title": "Schools",
+      "entries": [
+        {
+          "name": "A.B. Miller High School",
+          "link": "https://abmiller.fusd.net/",
+          "summary": "At A.B. Miller High School, we live by Miller PRIDE. We expect all students to demonstrate Participation, Respect, Integrity, Determination, and Empathy in the classroom, on campus, and throughout our community. These values guide our actions and help prepare students for success in school, in college and careers, and in life. Throughout the year, we will continue to foster these characteristics and celebrate students who exemplify the spirit of Miller PRIDE."
+        },
+        {
+          "link": "https://fohi.fusd.net/",
+          "name": "Fontana High School FoHi",
+          "summary": "Welcome to Fontana High School—Where We Live Maroon Every Day!"
+        },
+        {
+          "link": "https://kaiser.fusd.net/",
+          "name": "Kaiser High School",
+          "summary": "Henry J. Kaiser High School was established in September 1999. Our school is named after the renowned industrialist Henry J. Kaiser, who played a significant role in the development of Fontana through his establishment of the Kaiser Steel Mill."
+        },
+        {
+          "name": "Jurupa Hills High School",
+          "link": "https://jhills.fusd.net/",
+          "summary": "Jurupa Hills High School (JHHS) is one of five comprehensive high schools in the Fontana Unified School District, notable for its innovative design and distinguished programs. The school honors its historical roots with its name, derived from the first elementary school in southern Fontana, now the Fontana Adult School. JHHS features modern facilities, including collaborative student desks, a collegiate lecture hall, a 400-seat theater, and an athletic stadium with artificial turf."
+        },
+        {
+          "name": "Summit High School",
+          "link": "https://summithigh.fusd.net/",
+          "summary": "The mission of Summit High School is to foster a diverse and inclusive community where all students become compassionate, dedicated, and innovative leaders who are globally competitive and prepared through a rigorous academic environment that promotes collaboration and growth."
+        },
+        {
+          "link": "https://oakgroveprep.fusd.net/",
+          "name": "Oak Grove Prepatory Academy",
+          "summary": "Fontana Unified School District is proud to open a brand new, state-of-the-art secondary academy focused on innovation, creativity, and future-ready learning.\n\nThrough pathways in Information and Communication Technologies, and Health Science and Medical Technology, Arts, Media, and Entertainment, students will engage in hands-on, interdisciplinary learning experiences that prepare them for success in college, career, and beyond.\n\nThe academy also provides opportunities for students to accelerate their learning—taking high school courses during middle school and enrolling in college and university dual enrollment classes through our partnerships with California State University, San Bernardino and Chaffey College."
+        },
+        {
+          "name": "Fontana Adult School",
+          "link": "https://adultschool.fusd.net/",
+          "summary": "Adult education is powerful. Returning to education can be a transformative experience, opening doors to new opportunities and skills. It can also be scary. It's important to remember that we are here to help and it's never too late to start. Whether you're looking to advance your career, change fields, earn a high school diploma or GED, become a citizen or learn English, the best time to begin is now."
+        },
+        {
+          "name": "Eric Birch High School",
+          "link": "https://birch.fusd.net/",
+          "summary": "Eric Birch High School will provide a supportive alternative learning environment where every student can reach their full academic potential for college, career, and life by engaging in meaningful instruction, social emotional learning, and career skills development."
+        },
+        {
+          "link": "https://www.fusd.net/departments/student-services-division/online-alternative-learning-programs",
+          "name": "Online Learning",
+          "summary": "Fontana Unified School District offers alternative education options to meet students' academic, medical, and personal circumstances while supporting progress toward graduation and educational success. Eric Birch High School, Independent Study, Online Learning, and Home & Hospital Instruction each serve different student needs."
+        },
+        {
+          "name": "Alder Middle School",
+          "link": "https://alder.fusd.net/",
+          "summary": "Alder Middle School supports student learning by promoting a safe, engaging learning environment utilizing innovative technology and holding students accountable. We will help students acquire critical thinking skills in a dynamic classroom environment to prepare them for current and future success."
+        },
+        {
+          "name": "Almeria Middle School",
+          "link": "https://almeria.fusd.net/",
+          "summary": "At Almeria Middle School, we are committed to creating a safe, nurturing, and inclusive environment where every student feels seen, supported, and valued. Our vision, “Learn today for success tomorrow,” guides everything we do. We believe that middle school is a pivotal time in a young person’s life, and we are here to guide our students with care, consistency, and compassion—from the classroom to the quad."
+        },
+        {
+          "name": "Fontana Middle School",
+          "link": "https://fms.fusd.net/",
+          "summary": "Established in 1928 - Home of the Trojans"
+        },
+        {
+          "link": "https://truman.fusd.net/",
+          "name": "Harry S. Truman Middle School",
+          "summary": "Harry S. Truman Middle School was founded in 1996. We serve a diverse student body of approximately 890 students. Our vision is to prepare all students for high school, college, and a career while meeting their social and emotional needs to ensure academic success."
+        },
+        {
+          "name": "Sequoia Middle School",
+          "link": "https://sequoia.fusd.net/",
+          "summary": "9452 Hemlock Avenue\nFontana, CA, 92335\n(909) 357-5400\n \nServing Grades 7th and 8th\n\nWe are a Dual Language Immersion School"
+        },
+        {
+          "name": "Southridge Tech Middle School",
+          "link": "https://southridgetech.fusd.net/",
+          "summary": "At Southridge Tech Middle School, we are proud to be a school that challenges students to think critically, embrace innovation, and grow as compassionate leaders. Whether you are joining us for the first time or returning as a Knight, know that you are an important part of our school family. Our dedicated staff is committed to creating engaging learning experiences, building meaningful relationships, and providing every student with the support they need to succeed."
+        },
+        {
+          "name": "Wayne Ruble Middle School",
+          "link": "https://ruble.fusd.net/",
+          "summary": "At Ruble, we believe in the potential of every scholar. Our work is grounded in four commitments: Academic Excellence, Belonging & Well-Being, Community & Relationships, and Difference Makers. These commitments guide how we support our students both academically and personally and reflect the kind of school community we strive to build each day."
+        }
+      ]
     }
   ]
 }
