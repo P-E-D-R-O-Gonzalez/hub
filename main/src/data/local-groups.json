@@ -282,6 +282,41 @@
           "link": "https://hemlock.fusd.net/",
           "name": "Hemlock Elementary School",
           "summary": "Hemlock Elementary School is one of twenty-nine elementary schools in the Fontana Unified School District. It is an early-start, traditional school serving approximately 432 students in Kindergarten through Fifth grade."
+        },
+        {
+          "name": "Juniper Elementary School",
+          "link": "https://juniper.fusd.net/",
+          "summary": "At Juniper, we are committed to creating a school culture focused on our core values of Respect, Responsibility, and Safety. Our goal is to ensure every student learns and demonstrates these values each day through positive relationships, clear expectations, and opportunities to grow as caring, responsible, and successful learners."
+        },
+        {
+          "link": "https://binks.fusd.net/",
+          "name": "Kathy Binks Elementary School",
+          "summary": "Home of the Koalas\n7358 Cypress Avenue\nFontana, CA 92336\n(909) 357-5030\nFax: (909) 357-7562"
+        },
+        {
+          "link": "https://liveoak.fusd.net/",
+          "name": "Live Oak Elementary School",
+          "summary": "Welcome to Live Oak Elementary\nEstablished in 1962\nHome of the Bobcats\n9522 Live Oak Avenue\nFontana, CA 92335 \n(909) 357-5640\nFax: (909) 357-7571"
+        },
+        {
+          "link": "https://locust.fusd.net/",
+          "name": "Locust Elementary School",
+          "summary": "The mission at Locust Elementary School is to provide ALL students with an equitable and high-quality education, thereby developing the foundation for them to become compassionate, responsible, and successful members of society.\n\n7420 Locust Avenue, Fontana, CA 92335\n(909) 357-5650"
+        },
+        {
+          "link": "https://mango.fusd.net/",
+          "name": "Mango Elementary School",
+          "summary": "Welcome to Mango Elementary\nEstablished in 1992\n\nOur mission is to nurture our students’ academic and social-emotional needs to prepare them to be successful members of society equipped with 21st Century skills.\n\n7450 Mango Avenue\nFontana, CA 92336\n(909) 357-5660"
+        },
+        {
+          "link": "https://maple.fusd.net/",
+          "name": "Maple Elementary School",
+          "summary": "The staff of Maple Elementary School is dedicated to providing a safe and nurturing environment wherein students achieve academically, socially and emotionally to their maximum potential through cooperation, respect and dignity among all of us.\n\n751 S. Maple Avenue\nFontana, CA 92335\n\nTel: (909) 357-5670\nFax: (909) 357-7698"
+        },
+        {
+          "link": "https://northtam.fusd.net/",
+          "name": "North Tamarind Elementary School",
+          "summary": "Welcome to North Tamarind Elementary\nEstablished in 1951\n7961 Tamarind Avenue\nFontana, CA 92336\n(909) 357-5680"
         }
       ]
     }
