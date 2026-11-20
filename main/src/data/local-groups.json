@@ -384,6 +384,16 @@
           "summary": "Welcome to West Randall Elementary School\n\nEstablished in 1947\n\n15620 Randall Avenue\nFontana, CA, 92335\n(909) 357-5780\n"
         }
       ]
+    },
+    {
+      "title": "Local Spots + Small Businesses",
+      "entries": [
+        {
+          "name": "Name of place",
+          "link": "https://thier-link-goes-here.com",
+          "summary": "Intro + key information"
+        }
+      ]
     }
   ]
 }
