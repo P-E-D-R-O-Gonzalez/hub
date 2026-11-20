@@ -177,3 +177,21 @@ the title on all public pages; leave it blank to use the site name. The Back to
 prefix switches to Spanish while the chosen name remains unchanged. Publish
 and wait for deployment. Logo descriptions remain separate for accessibility.
 The CMS admin title and installed-app manifest name are separate settings.
+
+## Editing the Fontana page
+
+Open **Pages → Fontana** in `/admin/` to edit the heading and body at `/fontana/`.
+This page shares the About Us layout, branding, back link, and responsive styling.
+The body starts empty so only the header appears until you add content.
+
+In the rich-text editor, place the cursor where an image should appear and use
+**Add → Image** to upload a file or choose one from the media library. Enter
+meaningful alt text, then continue writing below it. You can insert multiple
+images throughout the text. Images keep their proportions and fit the content
+width on small screens. In Markdown mode, the equivalent is
+`![Description of the image](/uploads/your-image.jpg)`.
+
+Content is stored in `main/src/data/fontana.md`; uploads use
+`main/public/uploads/` and are served from `/uploads/`. Publish and wait for the
+site rebuild and deployment. To link this page from the homepage, add a link
+button or footer link under **Pages → Home page** pointing to `/fontana/`.

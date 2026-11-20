@@ -1,0 +1,13 @@
+---
+import ContentPage from '../layouts/ContentPage.astro';
+import { Content, frontmatter, rawContent } from '../data/fontana.md';
+
+const title = typeof frontmatter.title === 'string' && frontmatter.title.trim()
+  ? frontmatter.title.trim()
+  : 'Fontana';
+const hasContent = rawContent().trim().length > 0;
+---
+
+<ContentPage title={title} hasContent={hasContent}>
+  <Content />
+</ContentPage>

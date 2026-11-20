@@ -274,6 +274,38 @@
           ]
         },
         {
+          "name": "fontana",
+          "label": "Fontana",
+          "file": "main/src/data/fontana.md",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Page title",
+              "widget": "string",
+              "default": "Fontana",
+              "pattern": [
+                ".*\\S.*",
+                "Enter a page title."
+              ]
+            },
+            {
+              "name": "body",
+              "label": "Page content",
+              "widget": "markdown",
+              "required": false,
+              "modes": [
+                "rich_text",
+                "raw"
+              ],
+              "editor_components": [
+                "image",
+                "code-block"
+              ],
+              "hint": "Write text and use Add → Image to upload or select images anywhere in the content. Add descriptive alt text for each image. Leave empty to show only the page header."
+            }
+          ]
+        },
+        {
           "name": "local_groups",
           "label": "Local Groups",
           "file": "main/src/data/local-groups.json",
